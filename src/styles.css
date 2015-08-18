@@ -1,0 +1,10 @@
+body {
+	width: 1000px;
+	display: block;
+	margin: auto;
+	font-size: 1.3em;
+}
+
+h1 {
+	text-align: center;
+}
