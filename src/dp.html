@@ -443,18 +443,20 @@ void dfs(int v, int p = -1) {
     }
 
     //Считаем ans[v]: вариант 3
-    //для нахождения двух наибольших значений, соберём все в вектор, и отсортируем его
-    vector&lt;int&gt; children_dp;
-    for (int u: graph[v]) {
-        if (u != p) {
-            children_dp.push_back(dp[u]);
+    if (graph[v].size() >= 3) {     //как минимум две дочерних вершины (не считая родительскую)
+        int f_max = INT_MIN, s_max = INT_MIN;   //первый и второй максимумы
+        for (int u: graph[v]) {
+            if (u != p) {
+                if (dp[u] >= f_max) {
+                    s_max = f_max;
+                    f_max = dp[u];
+                } else if (dp[u] > s_max) {
+                    s_max = dp[u];
+                }
+            }
         }
-    }
-    sort(children_dp.begin(), children_dp.end());
 
-    if (children_dp.size() >= 2) {
-        int sz = children_dp.size();
-        ans[v] = max(ans[v], children_dp[sz - 1] + children_dp[sz - 2] + c[v]);
+        ans[v] = max(ans[v], f_max + s_max + c[v]);
     }
 }
 
