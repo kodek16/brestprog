@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Проверка графа на наличие циклов</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- MathJax for embedded LaTeX -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+    <!-- Google code prettify (and a hack for displaying all line numbers). -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <style>
+        .prettyprint ol.linenums > li { list-style-type: decimal; }
+    </style>
+</head>
+
+<body>
+
+<h1>Проверка графа на наличие циклов</h1>
+
+<h3>Постановка задачи</h3>
+
+<p>Для заданного графа нужно ответить, содержит ли он хотя бы один цикл. Стоит
+заметить, что от нас не требуется найти <em>все</em> циклы, нужно всего лишь
+ответить, существует ли хотя бы один. Задача на поиск всех циклов решается
+гораздо сложнее.</p>
+
+<h3>Алгоритм</h3>
+
+<p>Для поиска цикла будем использовать DFS. Для примера разберём такой граф:</p>
+
+<img style="display: block; margin: auto" src="resources/graph_cycles.png" />
+
+<p>Допустим, мы запустили DFS из вершины 1, и он полностью обошёл граф.
+Представим обход этого графа так же, как представляем деревья, по уровням
+в зависимости от глубины рекурсии:</p>
+
+<img style="display: block; margin: auto" src="resources/graph_cycles2.png" />
+
+<p>(Примечание: это только один из возможных вариантов обхода в глубину.)</p>
+
+<p>Как видите по одному из ребёр, входящих в цикл, DFS не спускался: оно
+выделено красным цветом. Именно по наличию таких "восходящих" рёбер в графе
+можно судить о наличии в нём циклов. При реализации DFS такие рёбра распознать
+достаточно легко: они ведут в уже посещённую ($used$) вершину, но не в прямого
+предка ($p$).</p>
+
+<h3>Реализация</h3>
+
+<pre class="prettyprint linenums">
+#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+
+vector&lt;int&gt; graph[100000];
+bool used[100000];
+
+void dfs(int v, int p = -1) {    //p - прямой предок
+    used[v] = true;
+
+    for (int u: graph[v]) {
+        if (!used[u]) {
+            dfs(u, c_num);
+        } else if (u != p) {
+            cout &lt;&lt; "Graph has cycles.";
+            exit(0);    //Полностью выйти из программы.
+        }
+    }
+}
+
+int main() {
+    //Ввод графа...
+
+    //Проверяем отдельно каждую вершину, так как
+    //граф может быть несвязным, но всё равно иметь циклы
+    for (int i = 0; i &lt; n; i++) {
+        if (!used[i]) {
+            dfs(i);
+        }
+    }
+
+    //Если мы ещё не вышли не вышли из программы, в графе нет циклов.
+    cout &lt;&lt; "Graph has no cycles.";
+}
+</pre>
+
+<p>Сложность: $O(N)$</p>
