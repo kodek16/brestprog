@@ -170,7 +170,7 @@ int rank[100000];
 void init_dsu() {
     for (int i = 0; i &lt; 100000; i++) {
         p[i] = -1;
-        rank[i] = 1;    //Начальное значение не играет роли.
+        rank[i] = 1;
     }
 }
 
@@ -192,9 +192,9 @@ bool merge(int a, int b) {
             p[ra] = rb;
         } else if (rank[rb] &lt; rank[ra]) {
             p[rb] = ra;
-        } else {            //Если оба дерева имеют одинаковую глубину,
-            p[ra] = rb;     //неважно, какое из них подвешивать.
-            rank[rb]++;     //При этом глубина нового дерева увеличится на 1.
+        } else {
+            p[ra] = rb;
+            rank[rb]++;
         }
 
         return true;
