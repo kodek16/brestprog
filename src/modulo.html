@@ -201,32 +201,7 @@ long long bin_pow(long long base, long long p) {
 }
 </pre>
 
-<p>Выигрыш в скорости работы более заметен при итеративной реализации:</p>
-
-<pre class="prettyprint linenums lang-c">
-const long long MOD = 1e9 + 7;
-
-//base ^ p
-long long bin_pow(long long base, long long p) {
-    long long result = base;
-
-    while (p > 1) {
-        if (p % 2 == 0) {       //Если степень чётная
-            result *= result;   //Мы возводим промежуточный результат в квадрат.
-            result %= MOD;
-            p /= 2;             //И возводим результат в степень в два раза меньшую.
-        } else {
-            result *= base;
-            result %= MOD;
-            p--;
-        }
-    }
-
-    return base;
-}
-</pre>
-
-<p>Видно, что в худшем случае на каждой второй итерации
+<p>Можно заметить, что в худшем случае на каждом втором вызове функции
 степень будет уменьшаться вдвое. Значит, время работы алгоритма можно оценить
 как $O(\log p)$.</p>
 
