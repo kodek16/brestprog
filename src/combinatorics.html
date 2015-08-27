@@ -230,9 +230,9 @@ long long c[1001][1001];
 
 int main() {
     c[1][1] = 1;
-    for (int n = 2; n &lt; 1000; n++) {
+    for (int n = 2; n &lt;= 1000; n++) {
         c[n][1] = n;
-        for (int k = 2; k &lt; n; k++) {
+        for (int k = 2; k &lt;= n; k++) {
             c[n][k] = (c[n - 1][k] + c[n - 1][k - 1]) % MOD;
         }
     }
