@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Взвешенные графы. Алгоритм Дейкстры</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- MathJax for embedded LaTeX -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+    <!-- Google code prettify (and a hack for displaying all line numbers). -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <style>
+        .prettyprint ol.linenums > li { list-style-type: decimal; }
+    </style>
+</head>
+
+<body>
+
+<h1>Взвешенные графы. Алгоритм Дейкстры</h1>
+
+<h3>Взвешенные графы</h3>
+
+<p>В классических графах все рёбра считаются равноценными и длина пути
+соответствует <em>количеству</em> рёбер, которые он содержит. Однако часто
+в задаче каждому ребру соответствует некоторый параметр &ndash; <em>длина</em>
+ребра или <em>стоимость</em> прохождения по нему. В терминологии графов такой
+параметр называется <strong>весом</strong> ребра, а граф, содержащий взвешенные
+рёбра, <strong>взвешенным</strong>.
+
+<img style="display: block; margin: auto; width: 400px" src="resources/Weighted.gif" />
+
+<p>Типичная задача для таких графов &ndash; поиск кратчайшего пути. Например,
+в этом графе кратчайший путь между вершинами $1$ и $5$: $1 - 4 - 3 - 5$, так
+как его вес равен $30 + 20 + 10 = 60$, а вес ребра $1 - 5$ равен $100$.</p>
+
+<h3>Алгоритм Дейкстры</h3>
+
+<p>Классический алгоритм для поиска кратчайших путей во взвешенном графе &ndash;
+алгоритм Дейкстры (по имени автора Эдгара Дейкстры). Он позволяет найти
+кратчайший путь от одной вершины графа до всех остальных за $O(M \log N)$
+($N, M$ &ndash; количество вершин и рёбер соответственно).</p>
+
+</p>Принцип работы алгоритма напоминает принцип работы BFS: на каждом шаге
+обрабатывается ближайшая ещё не обработанная вершина (расстояние до неё
+уже известно). При её обработке все ещё не посещённые соседи добавляются
+в очередь для посещения (расстояние до каждой из них рассчитывается как
+расстояние до текущей вершины + длина ребра). Главное отличие от BFS
+заключается в том, что вместо классической очереди используется очередь с
+приоритетом. Она позволяет нам выбирать ближайшую вершину за $O(\log N)$.</p>
+
+<p>Анимация выполнения алгоритма Дейкстры для поиска кратчайшего пути из вершины
+$a$ в вершину $b$:</p>
+
+<img style="display: block; margin: auto; width: 566px" src="resources/Dijkstra_Animation.gif" />
+
+<p>С помощью псевдокода алгоритм Дейкстры описывается следующим образом:</p>
+
+<pre>
+ans = массив расстояний от начальной вершины до каждой.
+      изначально заполнен бесконечностями (ещё не достигнута).
+
+ans[start] = 0
+
+q = очередь с приоритетом, хранящая пары (v, dst),
+    где dst - предполагаемое расстояние до v
+
+добавить (start, 0) в q
+
+пока q не пуста:
+    (v, dst) = первая вершина в очереди (с минимальным расстоянием), и расстояние до неё
+    извлечь (v, dst) из очереди
+
+    если ans[v] &lt; dst:   //мы уже обработали эту вершину, используя другой путь
+        перейти к следующей вершине
+
+    для каждой v -> u:
+        n_dst = dst + len(v -> u)   //расстояние до u при прохождении через v
+        если n_dst &lt; ans[u]:        //если мы можем улучшить ответ
+            ans[u] = n_dst
+            добавить (u, n_dst) в q
+</pre>
+
+<p>Как видите, в очереди с приоритетом хранится не только номер вершины, но
+и вычисленное расстояние до неё, по которому и ведётся сортировка. Также
+возможна ситуация, при которой одна и та же вершина будет помещена в очередь
+несколько раз с разным расстоянием (так как она достижима по нескольким рёбрам).
+В такой ситуации обрабатываем её только один раз (с минимальным возможным
+расстоянием).</p>
+
+<h3>Реализация</h3>
+
+<p>В нашей очереди с приоритетом должны храниться пары (вершина, расстояние до неё),
+причём отсортированы они должны быть по уменьшению расстояния. Для этого нужно
+использовать тип
+<code>std::priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, greater&lt;pair&lt;int, int&gt;&gt;&gt;</code>:
+первым элементом пары будет расстояние, а вторым &ndash; номер вершины.</p>
+
+<p>Для хранения взвешенного графа в виде списка смежности для каждой вершины мы
+храним вектор пар (соседняя вершина, длина ребра до неё).</p>
+
+<p>Реализация на C++:</p>
+
+<pre class="prettyprint linenums">
+#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+
+const int INF = 1e9 + 7;
+
+vector&lt;pair&lt;int, int&gt;&gt; graph;
+int ans[100000];
+
+int main() {
+    //Ввод графа и вершины start.
+
+    for (int i = 0; i &lt; n; i++) {
+        ans[i] = INF;
+    }
+
+    ans[start] = 0;
+
+    priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, greater&lt;pair&lt;int, int&gt;&gt;&gt; q;
+
+    q.push({0, start});
+
+    while (!q.empty()) {
+        pair&lt;int, int&gt; c = q.top();
+        q.pop();
+
+        int dst = c.first, v = c.second;
+
+        if (ans[v] &lt; dst) {
+            continue;
+        }
+
+        for (pair&lt;int, int&gt; e: graph[v]) {
+            int u = e.first, len_vu = e.second;
+            
+            int n_dst = dst + len_vu;
+            if (n_dst &lt; ans[u]) {
+                ans[u] = n_dst;
+                q.push({n_dst, u});
+            }
+        }
+    }
+
+    for (int i = 0; i &lt; n; i++) {
+        cout &lt;&lt; "Shortest path from " &lt;&lt; start + 1 &lt;&lt; " to " &lt;&lt; i + 1 &lt;&lt; " has length " &lt;&lt; ans[i] &lt;&lt; endl;
+    }
+}
+</pre>
+
+<h3>Реализация с восстановлением пути</h3>
+
+<p>Восстановление пути для алгоритма Дейкстры реализуется точно так же, как и для
+BFS: при успешном улучшении пути в вершину $u$ через вершину $v$, мы запоминаем,
+что $prev[v] = u$. После окончания работы алгоритма используем массив $prev$ для
+восстановления пути в обратном направлении.</p>
+
+<p>Реализация на C++:</p>
+
+<pre class="prettyprint linenums">
+#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+
+const int INF = 1e9 + 7;
+
+vector&lt;pair&lt;int, int&gt;&gt; graph;
+int ans[100000];
+int prev[100000];
+
+int main() {
+    //Ввод графа и вершин start и end.
+
+    for (int i = 0; i &lt; n; i++) {
+        ans[i] = INF;
+        prev[i] = -1;   //Значение, обозначающее что из этой вершины возвращаться некуда
+    }
+
+    ans[start] = 0;
+
+    priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, greater&lt;pair&lt;int, int&gt;&gt;&gt; q;
+
+    q.push({0, start});
+
+    while (!q.empty()) {
+        pair&lt;int, int&gt; c = q.top();
+        q.pop();
+
+        int dst = c.first, v = c.second;
+
+        if (ans[v] &lt; dst) {
+            continue;
+        }
+
+        for (pair&lt;int, int&gt; e: graph[v]) {
+            int u = e.first, len_vu = e.second;
+            
+            int n_dst = dst + len_vu;
+            if (n_dst &lt; ans[u]) {
+                ans[u] = n_dst;
+                prev[u] = v;
+                q.push({n_dst, u});
+            }
+        }
+    }
+
+    vector&lt;int&gt; path;
+
+    int cur = end;
+    path.push_back(cur);
+
+    while (prev[cur] != -1) {
+        cur = prev[cur];
+        path.push_back(cur);
+    }
+
+    reverse(path.begin(), path.end());
+
+    cout &lt;&lt; "Shortest path between vertices " &lt;&lt; begin + 1 &lt;&lt; " and " &lt;&lt; end + 1 &lt;&lt; " is: " &lt;&lt; endl;
+
+    for (int v: path) {
+        cout &lt;&lt; v + 1 &lt;&lt; ", ";
+    }
+}
+</pre>
+
+<h3>Область применения алгоритма Дейкстры</h3>
+
+<p>Алгоритм Дейкстры является оптимальным для поиска пути практически в любых
+графах, но он имеет одно ограничение. Алгоритм Дейкстры неприменим для графов,
+содержащих рёбра с отрицательным весом. Для поиска кратчайшего пути в таких
+графах обычно используют алгоритм Форда-Беллмана.</p>
+
+</body>
+</html>
