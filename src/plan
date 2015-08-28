@@ -16,7 +16,7 @@
 Топологическая сортировка                                               OK (topsort.html)
 Динамическое программирование на примерах                               OK (dp.html)
 Основные элементы комбинаторики                                         OK (combinatorics.html)
-Функции на префиксе                                                     OK (prefixsums.html)
+Префиксные суммы. XOR                                                   OK (prefixsums.html)
 Длинная арифметика                                                      OK (longarithmetics.html)
 Полное бинарное дерево. Куча. Очередь с приоритетом                     OK (heap.html)
 Взвешенные графы. Алгоритм Дейкстры                                     OK (dijkstra.html)
