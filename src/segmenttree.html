@@ -187,7 +187,7 @@ int get_sum(int l, int r, int v, int tl, int tr) {
 //v - номер текущей вершины; tl, tr - границы соответствующего отрезка
 void update(int idx, int val, int v, int tl, int tr) {
     //вариант 1
-    if (idx &lt;= tl &amp;&amp; tr &lt;= idx) {
+    if (idx &lt;= tl &amp;&amp; tr &lt;= idx) {    //То же, что и idx == tl == tr
         a[idx] = val;
         tree[v] = val;
         return;
@@ -260,7 +260,7 @@ int get_min(int l, int r, int v, int tl, int tr) {
 
 void update(int idx, int val, int v, int tl, int tr) {
     //вариант 1
-    if (idx &lt;= tl &amp;&amp; tr &lt;= idx) {
+    if (idx &lt;= tl &amp;&amp; tr &lt;= idx) {       //То же, что и idx == tl == tr
         a[idx] = val;
         tree[v] = val;
         return;
