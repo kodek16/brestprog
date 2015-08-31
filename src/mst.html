@@ -81,7 +81,7 @@ using namespace std;
 
 const int INF = 1e9 + 7;
 
-vector&lt;pair&lt;int, int&gt;&gt; graph;
+vector&lt;pair&lt;int, int&gt;&gt; graph[100000];
 bool used[100000];      //включили ли мы соответствующую вершину в остов
 
 int main() {
@@ -143,13 +143,17 @@ int main() {
 <p>Используем реализацию DSU со всеми оптимизациями из соответствующей лекции:</p>
 
 <pre class="prettyprint lang-c linenums">
+#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+
 int p[100000];
-int rank[100000];
+int rk[100000];
 
 void init_dsu() {
     for (int i = 0; i &lt; 100000; i++) {
         p[i] = -1;
-        rank[i] = 1;
+        rk[i] = 1;
     }
 }
 
@@ -167,13 +171,13 @@ bool merge(int a, int b) {
     if (ra == rb) {
         return false;
     } else {
-        if (rank[ra] &lt; rank[rb]) {
+        if (rk[ra] &lt; rk[rb]) {
             p[ra] = rb;
-        } else if (rank[rb] &lt; rank[ra]) {
+        } else if (rk[rb] &lt; rk[ra]) {
             p[rb] = ra;
         } else {
             p[ra] = rb;
-            rank[rb]++;
+            rk[rb]++;
         }
 
         return true;
@@ -187,7 +191,7 @@ struct edge {
     bool operator&lt;(const edge&amp; other) {
         return len &lt; other.len;
     }
-}
+};
 
 int main() {
     vector&lt;edge&gt; edges;
@@ -196,6 +200,8 @@ int main() {
     sort(edges.begin(), edges.end());
 
     int mst_weight = 0;
+
+    init_dsu();
 
     for (edge e: edges) {
         if (merge(e.a, e.b)) {      //Если a и b находятся в разных компонентах,

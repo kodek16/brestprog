@@ -106,9 +106,9 @@ int binsearch_array(vector&lt;int&gt;&amp; a, int val) {
     while (r &gt; l) {
         int m = (l + r) / 2;    //целочисленное деление!
         
-        if (a[m] &lt; y) {
+        if (a[m] &lt; val) {
             l = m + 1;
-        } else if (a[m] &gt; y) {
+        } else if (a[m] &gt; val) {
             r = m - 1;
         } else {
             return m;

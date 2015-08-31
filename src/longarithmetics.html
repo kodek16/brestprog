@@ -76,8 +76,8 @@ C++.</p>
 <pre class="prettyprint lang-c">
 struct bigint {
     
-    const long long BASE = 1e9;     //размер разряда
-    const long long SIZE = 10;      //количество вмещаемых разрядов
+    static const long long BASE = 1e9;     //размер разряда
+    static const long long SIZE = 10;      //количество вмещаемых разрядов
 
     long long digits[SIZE];
 
@@ -238,7 +238,7 @@ $i + j$ произведения (0-индексация). После этого
 
     bigint operator/(long long x) {
         bigint n(*this);
-        n /= other;
+        n /= x;
         return n;
     }
 </pre>
@@ -254,7 +254,7 @@ ostream&amp; operator&lt;&lt;(ostream&amp; out, const bigint&amp; num) {
 
     char buffer[10];
 
-    for (int i = num::SIZE - 1; i >= 0; i--) {
+    for (int i = bigint::SIZE - 1; i >= 0; i--) {
         sprintf(buffer, "%09d", num.digits[i]);
         result += buffer;
     }
@@ -275,8 +275,8 @@ ostream&amp; operator&lt;&lt;(ostream&amp; out, const bigint&amp; num) {
 <pre class="prettyprint lang-c linenums">
 struct bigint {
     
-    const long long BASE = 1e9;
-    const long long SIZE = 10;
+    static const long long BASE = 1e9;
+    static const long long SIZE = 10;
 
     long long digits[SIZE];
 
@@ -393,17 +393,17 @@ struct bigint {
 
     bigint operator/(long long x) {
         bigint n(*this);
-        n /= other;
+        n /= x;
         return n;
     }
-}
+};
 
 ostream&amp; operator&lt;&lt;(ostream&amp; out, const bigint&amp; num) {
     string result;
 
     char buffer[10];
 
-    for (int i = num::SIZE - 1; i >= 0; i--) {
+    for (int i = bigint::SIZE - 1; i >= 0; i--) {
         sprintf(buffer, "%09d", num.digits[i]);
         result += buffer;
     }

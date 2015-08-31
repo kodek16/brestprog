@@ -78,7 +78,7 @@ $s[i]$ с $s[0]$, и в зависимости от результата при�
 <h3>Реализация</h3>
 
 <pre class="prettyprint">
-vector&lt;int&gt; prefix_function(string&amp; s) {
+vector&lt;int&gt; prefix_function(const string&amp; s) {
     vector&lt;int&gt; pi(s.length(), 0);
 
     for (int i = 1; i &lt; s.length(); i++) {
@@ -124,7 +124,7 @@ $\pi[i] = \vert t \vert$. Значит $s[i - \vert t \vert - 1]$ &ndash; пос
 
 using namespace std;
 
-vector&lt;int&gt; prefix_function(string&amp; s) {
+vector&lt;int&gt; prefix_function(const string&amp; s) {
     vector&lt;int&gt; pi(s.length(), 0);
 
     for (int i = 1; i &lt; s.length(); i++) {

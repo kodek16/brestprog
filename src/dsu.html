@@ -108,12 +108,12 @@ bool merge(int a, int b) {
 
 <pre class="prettyprint linenums">
 int p[100000];
-int rank[100000];
+int rk[100000];   //имя rank уже используется библиотекой
 
 void init_dsu() {
     for (int i = 0; i &lt; 100000; i++) {
         p[i] = -1;
-        rank[i] = 1;    //Начальное значение не играет роли.
+        rk[i] = 1;    //Начальное значение не играет роли.
     }
 }
 
@@ -131,13 +131,13 @@ bool merge(int a, int b) {
     if (ra == rb) {
         return false;
     } else {
-        if (rank[ra] &lt; rank[rb]) {
+        if (rk[ra] &lt; rk[rb]) {
             p[ra] = rb;
-        } else if (rank[rb] &lt; rank[ra]) {
+        } else if (rk[rb] &lt; rk[ra]) {
             p[rb] = ra;
         } else {            //Если оба дерева имеют одинаковую глубину,
             p[ra] = rb;     //неважно, какое из них подвешивать.
-            rank[rb]++;     //При этом глубина нового дерева увеличится на 1.
+            rk[rb]++;     //При этом глубина нового дерева увеличится на 1.
         }
 
         return true;
@@ -165,12 +165,12 @@ bool merge(int a, int b) {
 
 <pre class="prettyprint linenums">
 int p[100000];
-int rank[100000];
+int rk[100000];
 
 void init_dsu() {
     for (int i = 0; i &lt; 100000; i++) {
         p[i] = -1;
-        rank[i] = 1;
+        rk[i] = 1;
     }
 }
 
@@ -188,13 +188,13 @@ bool merge(int a, int b) {
     if (ra == rb) {
         return false;
     } else {
-        if (rank[ra] &lt; rank[rb]) {
+        if (rk[ra] &lt; rk[rb]) {
             p[ra] = rb;
-        } else if (rank[rb] &lt; rank[ra]) {
+        } else if (rk[rb] &lt; rk[ra]) {
             p[rb] = ra;
         } else {
             p[ra] = rb;
-            rank[rb]++;
+            rk[rb]++;
         }
 
         return true;

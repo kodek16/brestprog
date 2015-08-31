@@ -73,7 +73,7 @@ int fact(int x) {
 }
 
 int fib(int n) {
-    if (n &lt; 2) {
+    if (n &lt;= 2) {
         return 1;
     } else {
         return fib(n - 1) + fib(n - 2);
@@ -180,14 +180,13 @@ int main() {
 using namespace std;
 
 vector&lt;int&gt; graph[100000];    //храним дерево как и обычный граф
-bool used[100000];
 
 void dfs(int v, int p = -1) {   //p (от parent) - предыдущая вершина, для начальной вершины равна -1.
     cout &lt;&lt; "DFS at vertex " &lt;&lt; v + 1 &lt;&lt; endl;
 
     for (int u: graph[v]) {
         if (u != p) {
-            dfs(u, p);
+            dfs(u, v);
         }
     }
 }

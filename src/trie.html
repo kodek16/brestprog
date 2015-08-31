@@ -87,7 +87,7 @@ struct node {
 если они ещё не созданы, и увеличить счётчик строк в последней вершине на $1$:</p>
 
 <pre class="prettyprint lang-c">
-node *root;     //корневая вершина бора, соответствующая пустой строке.
+node *root = new node();     //корневая вершина бора, соответствующая пустой строке.
 
 void add(const string&amp; s) {
     node *cur_v = root;     //текущая вершина
@@ -136,9 +136,9 @@ void write(node *v = root) {
     }
 
     for (int i = 0; i &lt; 26; i++) {
-        if (v->next['a' + i] != nullptr) {
+        if (v->next[i] != nullptr) {
             cur_str.push_back('a' + i);
-            write(v->next['a' + i]);
+            write(v->next[i]);
             cur_str.pop_back();
         }
     }

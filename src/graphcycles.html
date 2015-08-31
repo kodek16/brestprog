@@ -67,7 +67,7 @@ void dfs(int v, int p = -1) {    //p - прямой предок
 
     for (int u: graph[v]) {
         if (!used[u]) {
-            dfs(u, c_num);
+            dfs(u, v);
         } else if (u != p) {
             cout &lt;&lt; "Graph has cycles.";
             exit(0);    //Полностью выйти из программы.

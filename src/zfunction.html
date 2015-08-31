@@ -46,7 +46,7 @@ $i$-го суффикса.</p>
 реализуется следующим образом:</p>
 
 <pre class="prettyprint">
-vector&lt;int&gt; z_function(string&amp; s) {
+vector&lt;int&gt; z_function(const string&amp; s) {
     vector&lt;int&gt; z(s.length(), 0);
 
     for (int i = 1; i &lt; s.length(); i++) {
@@ -101,7 +101,7 @@ $$z[i] = min(z[i - l], r - i + 1)$$
 <h3>Реализация</h3>
 
 <pre class="prettyprint">
-vector&lt;int&gt; z_function(string&amp; s) {
+vector&lt;int&gt; z_function(const string&amp; s) {
     vector&lt;int&gt; z(s.length(), 0);
 
     //начальные значения l и r непринципиальны
@@ -143,7 +143,7 @@ vector&lt;int&gt; z_function(string&amp; s) {
 
 using namespace std;
 
-vector&lt;int&gt; z_function(string&amp; s) {
+vector&lt;int&gt; z_function(const string&amp; s) {
     vector&lt;int&gt; z(s.length(), 0);
 
     for (int i = 1, l = 0, r = 0; i &lt; s.length(); i++) {

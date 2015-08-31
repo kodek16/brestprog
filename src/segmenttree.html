@@ -334,7 +334,7 @@ void build_tree(int v, int tl, int tr) {
         tree[v].resize(tr - tl + 1);
         merge(tree[v * 2].begin(),     tree[v * 2].end(),
               tree[v * 2 + 1].begin(), tree[v * 2 + 1].end(),
-              tree[v]);
+              tree[v].begin());
     }
 }
 
@@ -353,8 +353,8 @@ int query(int l, int r, int x, int v, int tl, int tr) {
 
     //вариант 3
     int tm = (tl + tr) / 2;
-    return query(l, r, v * 2,     tl,     tm)
-         + query(l, r, v * 2 + 1, tm + 1, tr);
+    return query(l, r, x, v * 2,     tl,     tm)
+         + query(l, r, x, v * 2 + 1, tm + 1, tr);
 }
 
 int main() {
@@ -363,7 +363,7 @@ int main() {
     build_tree(1, 0, n - 1);    //параметры корня дерева.
                                 //все запросы должны вызываться для этих параметров.
 
-    //Можно делать запросы вида query(l, r, 1, 0, n - 1)
+    //Можно делать запросы вида query(l, r, x, 1, 0, n - 1)
 }
 </pre>
 
@@ -485,13 +485,13 @@ int get_sum(int l, int r, int v, int tl, int tr) {
 void assign(int l, int r, int val, int v, int tl, int tr) {
     //вариант 1
     if (l &lt;= tl &amp;&amp; tr &lt;= r) {
-        tree[v] = val;
+        tree[v] = val * (tr - tl + 1);
         mod[v] = val;   //сохраняем несогласованность
         return;
     }
 
     //вариант 2
-    if (tr &lt; idx || idx &lt; tl) {
+    if (tr &lt; l || r &lt; tl) {
         return;
     }
 

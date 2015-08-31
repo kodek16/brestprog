@@ -146,11 +146,11 @@ void precalc() {
     pref[0][0] = a[0][0];
 
     for (int i = 1; i &lt; n; i++) {
-        pref[i][0] = pref[i - 1][0] + a[i][0]
+        pref[i][0] = pref[i - 1][0] + a[i][0];
     }
 
     for (int i = 1; i &lt; m; i++) {
-        pref[0][i] = pref[0][i - 1] + a[0][i]
+        pref[0][i] = pref[0][i - 1] + a[0][i];
     }
 
     for (int i = 1; i &lt; n; i++) {

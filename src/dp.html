@@ -54,7 +54,7 @@
 
 <pre class="prettyprint linenums">
 int fib(int n) {
-    if (n &lt; 2) {
+    if (n &lt;= 2) {
         return 1;
     } else {
         return fib(n - 1) + fib(n - 2);
@@ -90,7 +90,7 @@ int main() {
 
     fib[1] = fib[2] = 1;    //начальные значения
 
-    for (int i = 3; i &lt; N; i++) {
+    for (int i = 3; i &lt;= n; i++) {
         fib[i] = fib[i - 1] + fib[i - 2];   //формула перехода
     }
 
@@ -153,15 +153,15 @@ int main() {
     cin >> n >> m;
 
     for (int i = 0; i &lt; n; i++) {
-        for (int j = 0; j &lt; n; j++) {
+        for (int j = 0; j &lt; m; j++) {
             cin >> c[i][j];
         }
     }
 
-    dp[0][0] = 0;
+    dp[0][0] = c[0][0];
 
     for (int i = 0; i &lt; n; i++) {
-        for (int j = 0; j &lt; n; j++) {
+        for (int j = 0; j &lt; m; j++) {
             if (i || j) {   //цикл не должен заходить в клетку (0, 0)
                 dp[i][j] = INT_MIN;     //код рассчёта максимума получился
                                         //достаточно длинным из-за дополнительных
@@ -247,7 +247,7 @@ int main() {
         }
     }
 
-    int ans = max_element(dp, dp + n);      //C++11
+    int ans = *max_element(dp, dp + n);      //C++11
     cout &lt;&lt; ans;
 }
 </pre>
@@ -313,7 +313,7 @@ int main() {
         cin >> a[i];
     }
 
-    for (int i = 2; i &lt; n; i++) {
+    for (int i = 2; i &lt;= n; i++) {
         d[i] = INF;
     }
 
@@ -420,13 +420,15 @@ int dp[100000];
 int ans[100000];
 
 void dfs(int v, int p = -1) {
-    for (int u: graph[v]) {     //сначала считаем ДП для всех дочерних вершин
-        dfs(u, v);
+    for (int u: tree[v]) {     //сначала считаем ДП для всех дочерних вершин
+        if (u != p) {
+            dfs(u, v);
+        }
     }
 
     //Считаем dp[v]
     dp[v] = c[v];
-    for (int u: graph[v]) {
+    for (int u: tree[v]) {
         if (u != p) {
             dp[v] = max(dp[v], dp[u] + c[v]);
         }
@@ -436,16 +438,17 @@ void dfs(int v, int p = -1) {
     ans[v] = dp[v];
 
     //Считаем ans[v]: вариант 2
-    for (int u: graph[v]) {
+    for (int u: tree[v]) {
         if (u != p) {
             ans[v] = max(ans[v], ans[u]);
         }
     }
 
     //Считаем ans[v]: вариант 3
-    if (graph[v].size() >= 3) {     //как минимум две дочерних вершины (не считая родительскую)
+    //если есть как минимум две дочерних вершины (не считая родительскую)
+    if (tree[v].size() >= 3 || (p == -1 &amp;&amp; tree[v].size() >= 2)) {
         int f_max = INT_MIN, s_max = INT_MIN;   //первый и второй максимумы
-        for (int u: graph[v]) {
+        for (int u: tree[v]) {
             if (u != p) {
                 if (dp[u] >= f_max) {
                     s_max = f_max;

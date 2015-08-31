@@ -114,7 +114,7 @@ using namespace std;
 
 const int INF = 1e9 + 7;
 
-vector&lt;pair&lt;int, int&gt;&gt; graph;
+vector&lt;pair&lt;int, int&gt;&gt; graph[100000];
 int ans[100000];
 
 int main() {
@@ -173,16 +173,16 @@ using namespace std;
 
 const int INF = 1e9 + 7;
 
-vector&lt;pair&lt;int, int&gt;&gt; graph;
+vector&lt;pair&lt;int, int&gt;&gt; graph[100000];
 int ans[100000];
-int prev[100000];
+int pr[100000];     //prev
 
 int main() {
     //Ввод графа и вершин start и end.
 
     for (int i = 0; i &lt; n; i++) {
         ans[i] = INF;
-        prev[i] = -1;   //Значение, обозначающее что из этой вершины возвращаться некуда
+        pr[i] = -1;   //Значение, обозначающее что из этой вершины возвращаться некуда
     }
 
     ans[start] = 0;
@@ -207,7 +207,7 @@ int main() {
             int n_dst = dst + len_vu;
             if (n_dst &lt; ans[u]) {
                 ans[u] = n_dst;
-                prev[u] = v;
+                pr[u] = v;
                 q.push({n_dst, u});
             }
         }
@@ -218,14 +218,14 @@ int main() {
     int cur = end;
     path.push_back(cur);
 
-    while (prev[cur] != -1) {
-        cur = prev[cur];
+    while (pr[cur] != -1) {
+        cur = pr[cur];
         path.push_back(cur);
     }
 
     reverse(path.begin(), path.end());
 
-    cout &lt;&lt; "Shortest path between vertices " &lt;&lt; begin + 1 &lt;&lt; " and " &lt;&lt; end + 1 &lt;&lt; " is: " &lt;&lt; endl;
+    cout &lt;&lt; "Shortest path between vertices " &lt;&lt; start + 1 &lt;&lt; " and " &lt;&lt; end + 1 &lt;&lt; " is: " &lt;&lt; endl;
 
     for (int v: path) {
         cout &lt;&lt; v + 1 &lt;&lt; ", ";

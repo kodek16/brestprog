@@ -72,10 +72,10 @@ int main() {
 
     queue&lt;int&gt; q;
     q.push(0);              //в качестве начальной вершины используем 0.
-    visited[0] = true;
+    used[0] = true;
 
     while (!q.empty()) {
-        int cur = q.top();  //извлекаем из очереди текущую вершину
+        int cur = q.front();  //извлекаем из очереди текущую вершину
         q.pop();
 
         //Здесь должна быть обработка текущей вершины.
@@ -136,11 +136,11 @@ int main() {
 
     queue&lt;int&gt; q;
     q.push(0);
-    visited[0] = true;
+    used[0] = true;
     dst[0] = 0;         //теперь при добавлении каждой вершины в очередь мы вычисляем расстояние до неё
 
     while (!q.empty()) {
-        int cur = q.top();
+        int cur = q.front();
         q.pop();
 
         for (int neighbor: graph[cur]) {
@@ -191,7 +191,7 @@ using namespace std;
 vector&lt;int&gt; graph[100000];
 bool used[100000];
 int dst[100000];
-int prev[100000];
+int pr[100000];   //имя prev уже используется библиотекой, поэтому назовём массив pr
 
 int main() {
     //Ввод графа...
@@ -202,12 +202,12 @@ int main() {
 
     queue&lt;int&gt; q;
     q.push(0);
-    visited[0] = true;
+    used[0] = true;
     dst[0] = 0;
-    prev[0] = -1;   //Пометка, означающая, что у вершины 0 нет предыдущей.
+    pr[0] = -1;   //Пометка, означающая, что у вершины 0 нет предыдущей.
 
     while (!q.empty()) {
-        int cur = q.top();
+        int cur = q.front();
         q.pop();
 
         for (int neighbor: graph[cur]) {
@@ -215,7 +215,7 @@ int main() {
                 q.push(neighbor);
                 used[neighbor] = true;
                 dst[neighbor] = dst[cur] + 1;
-                prev[neighbor] = cur;   //сохранение предыдущей вершины
+                pr[neighbor] = cur;   //сохранение предыдущей вершины
             }
         }
     }
@@ -228,8 +228,8 @@ int main() {
     int cur = k;         //текущая вершина пути
     path.push_back(cur);
 
-    while (prev[cur] != -1) {   //пока существует предыдущая вершина
-        cur = prev[cur];        //переходим в неё
+    while (pr[cur] != -1) {   //пока существует предыдущая вершина
+        cur = pr[cur];        //переходим в неё
         path.push_back(cur);    //и дописываем к пути
     }
 
@@ -302,8 +302,8 @@ int main() {
     used[x1][y1] = true;
     dst[x1][y1] = 0;
 
-    while (!q.empty) {
-        pair&lt;int, int&gt; cur = q.top();
+    while (!q.empty()) {
+        pair&lt;int, int&gt; cur = q.front();
         q.pop();
 
         int cx = cur.first, cy = cur.second;

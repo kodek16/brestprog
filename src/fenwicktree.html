@@ -250,7 +250,7 @@ int get_max(int x) {
 void assign(int idx, int val) {
     a[idx] = val;
 
-    for (; idx &lt; n; idx |= idx + 1) {
+    for (; idx &lt;= 1000000; idx |= idx + 1) {
         f[idx] = max(f[idx], val);
     }
 }
