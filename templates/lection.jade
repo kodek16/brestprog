@@ -1,0 +1,47 @@
+doctype html
+html(lang=lang)
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no")
+    title brestprog - #{lectionName}
+    
+    //Bootstrap 3.3.6 (CSS only)
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css",
+                           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7",
+                           crossorigin="anonymous")
+    
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css",
+                           integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r",
+                           crossorigin="anonymous")
+    
+    //jQuery 3.0.0
+    script(src="https://code.jquery.com/jquery-3.0.0.min.js",
+           integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=",
+           crossorigin="anonymous")
+           
+    //Prism 1.5.1: syntax highlighting
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-c.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-cpp.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-java.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-python.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/plugins/line-numbers/prism-line-numbers.min.js")
+    
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/plugins/line-numbers/prism-line-numbers.min.css")
+
+    //MathJax: LaTeX formulas.
+    script(src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
+    script(type="text/x-mathjax-config").
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+      
+    link(rel="stylesheet", href="/styles/main.css")
+    script(src="/scripts/listing-tabs.js")
+  body
+    .container
+      .row
+        .col-sm-12
+          h1 #{lectionName}
+          !{lectionSrc}
