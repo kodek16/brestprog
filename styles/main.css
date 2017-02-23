@@ -20,3 +20,13 @@ pre[class*="language-"] {
 .token.operator {
     background-color: inherit;
 }
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+p {
+    font-size: 1.1em;
+}

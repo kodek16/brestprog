@@ -1,35 +1,24 @@
 'use strict';
 
-let gulp = require('gulp');
-let del = require('del');
-let fs = require('fs');
-let jade = require('gulp-jade');
-let rename = require('gulp-rename');
-let mergeStreams = require('merge-stream');
-let runSequence = require('run-sequence');
-let webserver = require('gulp-webserver');
-let yargs = require('yargs');
-let intel = require('intel');
+const fs = require('fs');
 
-let lectionProcessor = require('./utils/lection-processor.js');
-let test = require('./utils/test-framework.js');
+const gulp = require('gulp');
+const del = require('del');
+const pug = require('gulp-pug');
+const rename = require('gulp-rename');
+const mergeStreams = require('merge-stream');
+const runSequence = require('run-sequence');
+const webserver = require('gulp-webserver');
 
-intel.setLevel(intel.WARN);
-
-if (yargs.argv.info) {
-  intel.setLevel(intel.INFO);
-}
-
-if (yargs.argv.verbose) {
-  intel.setLevel(intel.VERBOSE);
-}
+const lectionProcessor = require('./utils/lection-processor.js');
 
 gulp.task('default', [ 'run' ]);
 
 gulp.task('run', [ 'build' ], function() {
-  return gulp.src('dist').pipe(webserver({
-    host: '0.0.0.0'
-  }));
+  return gulp.src('dist')
+    .pipe(webserver({
+      host: '0.0.0.0'
+    }));
 });
 
 gulp.task('stop', function() {
@@ -38,29 +27,21 @@ gulp.task('stop', function() {
     .emit('kill');
 });
 
-gulp.task('watch', ['run'], function() {
-  gulp.watch(['lections/**/*', 'listings/**/*'], ['clean:build', 'build']);
-});
-
-gulp.task('clean', ['clean:test', 'clean:build']);
-
-gulp.task('test', [ 'clean:test' ], function() {
-  return test('./listings');
-});
-
-gulp.task('clean:test', function() {
-  return del([ 'tmp' ]);
+gulp.task('watch', [ 'run' ], function() {
+  gulp.watch(
+      [ 'lections/**/*', 'listings/**/*', 'styles/**/*', 'scripts/**/*' ],
+      [ 'clean', 'build' ]);
 });
 
 gulp.task('build', function(cb) {
   runSequence(
-    'clean:build',
+    'clean',
     ['copyStatic', 'compileLections', 'compileIndex'],
     cb
   );
 });
 
-gulp.task('clean:build', function() {
+gulp.task('clean', function() {
   return del([
     'dist/**',
     '!dist'
@@ -77,7 +58,7 @@ gulp.task('copyStatic', function() {
   .pipe(gulp.dest('dist'));
 });
 
-//Only generates russian index as of now.
+// Only generates russian index as of now.
 gulp.task('compileIndex', () => {
   return readLections()
     .then(lections => {
@@ -86,8 +67,8 @@ gulp.task('compileIndex', () => {
         links[lection.name.ru] = '/lections/ru/' + lection.src;
       }
 
-      return gulp.src('templates/index.jade')
-        .pipe(jade({
+      return gulp.src('templates/index.pug')
+        .pipe(pug({
           locals: {
             lections: links
           }
@@ -110,8 +91,8 @@ gulp.task('compileLections', () => {
                 throw err;
               }
 
-              let stream = gulp.src('templates/lection.jade')
-                .pipe(jade({
+              let stream = gulp.src('templates/lection.pug')
+                .pipe(pug({
                   locals: {
                     lectionName: lection.name[lang],
                     lectionSrc: contents
@@ -135,7 +116,7 @@ function readLections() {
   return new Promise(resolve => {
     fs.readFile('lections/list.json', 'utf-8', (err, data) => {
       if (err) {
-        intel.error(`Couldn't read lections/list.json: ${err}`);
+        console.error(`Couldn't read lections/list.json: ${err}`);
         resolve([]);
         return;
       }

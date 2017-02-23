@@ -2,19 +2,13 @@
   "name": "brestprog",
   "license": "MIT",
   "dependencies": {
-    "byline": "^4.2.1",
     "del": "^2.2.0",
-    "escape-html": "^1.0.3",
-    "glob": "^7.0.3",
     "gulp": "^3.9.1",
-    "gulp-jade": "^1.1.0",
+    "gulp-pug": "^3.2.0",
     "gulp-rename": "^1.2.2",
-    "gulp-savefile": "^0.1.1",
     "gulp-webserver": "^0.9.1",
-    "intel": "^1.1.0",
     "merge-stream": "^1.0.0",
-    "run-sequence": "^1.1.5",
-    "through2": "^2.0.1",
-    "yargs": "^4.6.0"
+    "run-sequence": "^1.2.2",
+    "through2": "^2.0.1"
   }
 }
