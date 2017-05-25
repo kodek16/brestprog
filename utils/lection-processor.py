@@ -106,6 +106,9 @@ def preprocess_cpp_listing(raw_source):
         if line.strip() == '/*@ end @*/':
             hide = False
 
+    while processed_lines[-1] == '':
+        processed_lines.pop()
+
     source = '\n'.join(processed_lines)
 
     return html.escape(source)
