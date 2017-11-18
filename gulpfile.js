@@ -50,6 +50,7 @@ gulp.task('clean', function() {
 
 gulp.task('copyStatic', function() {
   return gulp.src([
+    'resources/**',
     'scripts/**',
     'styles/**'
   ], {
