@@ -4,55 +4,56 @@ title: Длинная арифметика
 permalink: topics/longarithmetics
 ---
 
-<h3>Определение</h3>
+### Определение
 
-<p>Длинная арифметика &ndash; набор алгоритмов для поразрядной работы с числами
+Длинная арифметика - набор алгоритмов для поразрядной работы с числами
 произвольной длины. Она применяется как с относительно небольшими числами,
 превышающими ограничения типа <code>long long</code> в несколько раз, так и с
-по-настоящему большими числами (чаще всего до $$10^{100000}$$).</p>
+по-настоящему большими числами (чаще всего до $$10^{100000}$$).
 
-<p>Для работы с "длинными" числами их разбивают на <em>разряды</em>. Размер
-разряда может быть произвольным, но чаще всего используются следующие:</p>
+Для работы с "длинными" числами их разбивают на *разряды*. Размер
+разряда может быть произвольным, но чаще всего используются следующие:
 
-<ul>
-    <li>$$10$$ &ndash; по аналогии с цифрами числа в десятичной системе, для простоты
-    понимания и отладки.</li>
 
-    <li>$$10^4$$ &ndash; набольшая степень десяти, квадрат которой не превышает
+- $$10$$ - по аналогии с цифрами числа в десятичной системе, для простоты
+    понимания и отладки.
+
+- $$10^4$$ - набольшая степень десяти, квадрат которой не превышает
     ограничения типа <code>int</code>. Используется для максимальной эффективности
     при хранении разрядов как чисел типа <code>int</code>.
 
-    <li>$$10^9$$ &ndash; аналогично предыдущему пункту, но для типа
-    <code>long long</code>. Позволяет достичь максимально возможной эффективности.</li>
-</ul>
+- $$10^9$$ - аналогично предыдущему пункту, но для типа
+    <code>long long</code>. Позволяет достичь максимально возможной эффективности.
 
-<p>(Ограничения на квадрат размера разряда связаны с необходимостью перемножать между
+
+(Ограничения на квадрат размера разряда связаны с необходимостью перемножать между
 собой разряды. Если квадрат разряда превышает ограничение своего типа, при умножении
-возможны переполнения.)</p>
+возможны переполнения.)
 
-<p>В большинстве реализаций разряды хранятся в порядке, обратным привычному для
+В большинстве реализаций разряды хранятся в порядке, обратным привычному для
 упрощения работы с ними. Например число $$578002300$$ при размере разряда $$10^4$$
-представляется следующим массивом:</p>
+представляется следующим массивом:
 
 $$\{2300, 7800, 5\}$$
 
-<p>Количество разрядов числа может быть как ограничено, так и не ограничено, в
+Количество разрядов числа может быть как ограничено, так и не ограничено, в
 зависимости от типа используемого контейнера: массива константной длины или
-вектора.</p>
+вектора.
 
-<h3>Реализация</h3>
+### Реализация
 
-<p>Далее будет приведена реализация длинной арифметики, использующая размер
+Далее будет приведена реализация длинной арифметики, использующая размер
 разряда $$10^9$$, и массив константой длины $$10$$ для хранения разрядов. Таким
-образом, эта реализация позволяет быстро работать с числами до $$10^{90}$$.</p>
+образом, эта реализация позволяет быстро работать с числами до $$10^{90}$$.
 
-<p>Реализация будет приведена в виде структуры <code>bigint</code> с перегруженными
+Реализация будет приведена в виде структуры <code>bigint</code> с перегруженными
 математическими операторами. Предполагается владение соответствующим материалом по
-C++.</p>
+C++.
 
-<p>Начнём с основных элементов структуры:</p>
+Начнём с основных элементов структуры:
 
-<pre><code class="language-cpp line-numbers">struct bigint {
+{% highlight cpp linenos %}
+struct bigint {
 
     static const long long BASE = 1e9;     //размер разряда
     static const long long SIZE = 10;      //количество вмещаемых разрядов
@@ -60,13 +61,13 @@ C++.</p>
     long long digits[SIZE];
 
     bigint() {                                  //стандартный конструктор
-        for (int i = 0; i &lt; SIZE; i++) {
+        for (int i = 0; i < SIZE; i++) {
             digits[i] = 0;
         }
     }
 
     bigint(long long x) {                       //конструктор для преобразования обычного числа в длинное
-        for (int i = 0; i &lt; SIZE; i++) {
+        for (int i = 0; i < SIZE; i++) {
             digits[i] = 0;
         }
 
@@ -77,34 +78,36 @@ C++.</p>
         }
     }
 
-    bigint(const bigint&amp; other) {           //конструктор копирования
-        for (int i = 0; i &lt; SIZE; i++) {
+    bigint(const bigint& other) {           //конструктор копирования
+        for (int i = 0; i < SIZE; i++) {
             digits[i] = other.digits[i];
         }
     }
 
-    bigint&amp; operator=(const bigint&amp; other) {    //оператор присваивания
-        for (int i = 0; i &lt; SIZE; i++) {
+    bigint& operator=(const bigint& other) {    //оператор присваивания
+        for (int i = 0; i < SIZE; i++) {
             digits[i] = other.digits[i];
         }
 
         return *this;
     }
-</code></pre>
+{% endhighlight %}
 
-<h3>Сложение</h3>
 
-<p>Длинную арифметику часто сравнивают с детским вычислением "в столбик". Это
+### Сложение
+
+Длинную арифметику часто сравнивают с детским вычислением "в столбик". Это
 достаточно справедливо, так как оба методы основаны на поразрядных операциях.
 Если вы умеете складывать в столбик, то реализация длинного сложения не должна
-вызвать у вас трудностей:</p>
+вызвать у вас трудностей:
 
-<pre><code class="language-cpp line-numbers">    void operator+=(const bigint&amp; other) {
-        for (int i = 0; i &lt; SIZE; i++) {        //сначала сложим числа поразрядно,
+{% highlight cpp linenos %}
+    void operator+=(const bigint& other) {
+        for (int i = 0; i < SIZE; i++) {        //сначала сложим числа поразрядно,
             digits[i] += other.digits[i];       //игнорируя переполнения
         }
 
-        for (int i = 0; i &lt; SIZE - 1; i++) {    //а затем поочередно выполним переносы
+        for (int i = 0; i < SIZE - 1; i++) {    //а затем поочередно выполним переносы
             if (digits[i] >= BASE) {            //для каждого разряда
                 digits[i] -= BASE;
                 digits[i + 1]++;
@@ -112,95 +115,101 @@ C++.</p>
         }
     }
 
-    bigint operator+(const bigint&amp; other) {
+    bigint operator+(const bigint& other) {
         bigint n(*this);
         n += other;
         return n;
     }
 
-    bigint&amp; operator++() {
+    bigint& operator++() {
         *this += 1;
         return *this;
     }
-</code></pre>
+{% endhighlight %}
 
-<h3>Вычитание</h3>
 
-<p>Вычитание реализуется симметрично сложению:</p>
+### Вычитание
 
-<pre><code class="language-cpp line-numbers">    void operator-=(const bigint&amp; other) {
-        for (int i = 0; i &lt; SIZE; i++) {
+Вычитание реализуется симметрично сложению:
+
+{% highlight cpp linenos %}
+    void operator-=(const bigint& other) {
+        for (int i = 0; i < SIZE; i++) {
             digits[i] -= other.digits[i];
         }
 
-        for (int i = 0; i &lt; SIZE - 1; i++) {
-            if (digits[i] &lt; 0) {
+        for (int i = 0; i < SIZE - 1; i++) {
+            if (digits[i] < 0) {
                 digits[i] += BASE;
                 digits[i + 1]--;
             }
         }
     }
 
-    bigint operator-(const bigint&amp; other) {
+    bigint operator-(const bigint& other) {
         bigint n(*this);
         n -= other;
         return n;
     }
 
-    bigint&amp; operator--() {
+    bigint& operator--() {
         *this -= 1;
         return *this;
     }
-</code></pre>
+{% endhighlight %}
 
-<h3>Умножение</h3>
 
-<p>Реализация умножения немного отличается от алгоритма умножения в столбик,
+### Умножение
+
+Реализация умножения немного отличается от алгоритма умножения в столбик,
 но принцип сохраняется: перемножим каждый разряд одного числа на каждый разряд
 другого. При умножении разряда $$i$$ на разряд $$j$$ добавим результат к разряду
 $$i + j$$ произведения (0-индексация). После этого выполним переносы аналогично
-сложению:</p>
+сложению:
 
-<pre><code class="language-cpp line-numbers">    void operator*=(const bigint&amp; other) {
+{% highlight cpp linenos %}
+    void operator*=(const bigint& other) {
         *this = *this * other;
     }
 
-    bigint operator*(const bigint&amp; other) {
+    bigint operator*(const bigint& other) {
         bigint result;
 
-        for (int i = 0; i &lt; SIZE; i++) {             //игнорируем переполнения всего числа
-            for (int j = 0; j &lt; SIZE - i; j++) {     //(откидываем разряды больше SIZE)
+        for (int i = 0; i < SIZE; i++) {             //игнорируем переполнения всего числа
+            for (int j = 0; j < SIZE - i; j++) {     //(откидываем разряды больше SIZE)
                 result.digits[i + j] += digits[i] * other.digits[j];
             }
         }
 
         //Не забываем, что мы могли переполнить размер разряда более, чем в два раза.
         //Для переноса воспользуемся делением.
-        for (int i = 0; i &lt; SIZE - 1; i++) {
+        for (int i = 0; i < SIZE - 1; i++) {
             result.digits[i + 1] += result.digits[i] / BASE;
             result.digits[i] %= BASE;
         }
 
         return result;
     }
-</code></pre>
+{% endhighlight %}
 
-<p>Такой алгоритм легко реализуется, но имеет сложность $$O(N^2)$$ ($$N$$ &ndash;
+
+Такой алгоритм легко реализуется, но имеет сложность $$O(N^2)$$ ($$N$$ -
 количество разрядов). Более эффективный алгоритм (алгоритм Карацубы)
 позволяет перемножать длинные числа за $$O(N^{1.58})$$, но вам он вряд ли
-понадобится.</p>
+понадобится.
 
-<h3>Деление на короткое</h3>
+### Деление на короткое
 
-<p>В отличие от других арифметических операций, деление длинного числа на
+В отличие от других арифметических операций, деление длинного числа на
 другое длинное реализуется достаточно сложно, и в школьных задачах вам
-вряд ли придётся им пользоваться.</p>
+вряд ли придётся им пользоваться.
 
-<p>Деление на короткое число (меньше размера разряда), напротив, реализуется
+Деление на короткое число (меньше размера разряда), напротив, реализуется
 очень просто. Просто делим по очереди каждый разряд длинного числа на короткое,
-сохраняем целую часть, а остаток переносим в предыдущий (младший) разряд:</p>
+сохраняем целую часть, а остаток переносим в предыдущий (младший) разряд:
 
-<pre><code class="language-cpp line-numbers">    void operator/=(long long x) {
+{% highlight cpp linenos %}
+    void operator/=(long long x) {
         for (int i = SIZE - 1; i >= 0; i--) {
             if (i) {
                 digits[i - 1] += (digits[i] % x) * BASE;
@@ -215,14 +224,16 @@ $$i + j$$ произведения (0-индексация). После этог
         n /= x;
         return n;
     }
-</code></pre>
+{% endhighlight %}
 
-<h3>Вывод длинного числа</h3>
 
-<p>Реализуем также вспомогательную функцию, позволяющую нам выводить длинные
-числа на экран так же просто, как и короткие.</p>
+### Вывод длинного числа
 
-<pre><code class="language-cpp line-numbers">ostream&amp; operator&lt;&lt;(ostream&amp; out, const bigint&amp; num) {
+Реализуем также вспомогательную функцию, позволяющую нам выводить длинные
+числа на экран так же просто, как и короткие.
+
+{% highlight cpp linenos %}
+ostream& operator<<(ostream& out, const bigint& num) {
     string result;
 
     char buffer[10];
@@ -234,18 +245,20 @@ $$i + j$$ произведения (0-индексация). После этог
 
     int first_idx = result.find_first_not_of('0');
     if (first_idx == string::npos) {
-        out &lt;&lt; "0";
+        out << "0";
     } else {
-        out &lt;&lt; result.substr(first_idx);
+        out << result.substr(first_idx);
     }
 
     return out;
 }
-</code></pre>
+{% endhighlight %}
 
-<h3>Полный код структуры</h3>
 
-<pre><code class="language-cpp line-numbers">struct bigint {
+### Полный код структуры
+
+{% highlight cpp linenos %}
+struct bigint {
 
     static const long long BASE = 1e9;
     static const long long SIZE = 10;
@@ -253,13 +266,13 @@ $$i + j$$ произведения (0-индексация). После этог
     long long digits[SIZE];
 
     bigint() {
-        for (int i = 0; i &lt; SIZE; i++) {
+        for (int i = 0; i < SIZE; i++) {
             digits[i] = 0;
         }
     }
 
     bigint(long long x) {
-        for (int i = 0; i &lt; SIZE; i++) {
+        for (int i = 0; i < SIZE; i++) {
             digits[i] = 0;
         }
 
@@ -270,26 +283,26 @@ $$i + j$$ произведения (0-индексация). После этог
         }
     }
 
-    bigint(const bigint&amp; other) {
-        for (int i = 0; i &lt; SIZE; i++) {
+    bigint(const bigint& other) {
+        for (int i = 0; i < SIZE; i++) {
             digits[i] = other.digits[i];
         }
     }
 
-    bigint&amp; operator=(const bigint&amp; other) {
-        for (int i = 0; i &lt; SIZE; i++) {
+    bigint& operator=(const bigint& other) {
+        for (int i = 0; i < SIZE; i++) {
             digits[i] = other.digits[i];
         }
 
         return *this;
     }
 
-    void operator+=(const bigint&amp; other) {
-        for (int i = 0; i &lt; SIZE; i++) {
+    void operator+=(const bigint& other) {
+        for (int i = 0; i < SIZE; i++) {
             digits[i] += other.digits[i];
         }
 
-        for (int i = 0; i &lt; SIZE - 1; i++) {
+        for (int i = 0; i < SIZE - 1; i++) {
             if (digits[i] >= BASE) {
                 digits[i] -= BASE;
                 digits[i + 1]++;
@@ -297,55 +310,55 @@ $$i + j$$ произведения (0-индексация). После этог
         }
     }
 
-    bigint operator+(const bigint&amp; other) {
+    bigint operator+(const bigint& other) {
         bigint n(*this);
         n += other;
         return n;
     }
 
-    bigint&amp; operator++() {
+    bigint& operator++() {
         *this += 1;
         return *this;
     }
 
-    void operator-=(const bigint&amp; other) {
-        for (int i = 0; i &lt; SIZE; i++) {
+    void operator-=(const bigint& other) {
+        for (int i = 0; i < SIZE; i++) {
             digits[i] -= other.digits[i];
         }
 
-        for (int i = 0; i &lt; SIZE - 1; i++) {
-            if (digits[i] &lt; 0) {
+        for (int i = 0; i < SIZE - 1; i++) {
+            if (digits[i] < 0) {
                 digits[i] += BASE;
                 digits[i + 1]--;
             }
         }
     }
 
-    bigint operator-(const bigint&amp; other) {
+    bigint operator-(const bigint& other) {
         bigint n(*this);
         n -= other;
         return n;
     }
 
-    bigint&amp; operator--() {
+    bigint& operator--() {
         *this -= 1;
         return *this;
     }
 
-    void operator*=(const bigint&amp; other) {
+    void operator*=(const bigint& other) {
         *this = *this * other;
     }
 
-    bigint operator*(const bigint&amp; other) {
+    bigint operator*(const bigint& other) {
         bigint result;
 
-        for (int i = 0; i &lt; SIZE; i++) {
-            for (int j = 0; j &lt; SIZE - i; j++) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE - i; j++) {
                 result.digits[i + j] += digits[i] * other.digits[j];
             }
         }
 
-        for (int i = 0; i &lt; SIZE - 1; i++) {
+        for (int i = 0; i < SIZE - 1; i++) {
             result.digits[i + 1] += result.digits[i] / BASE;
             result.digits[i] %= BASE;
         }
@@ -370,7 +383,7 @@ $$i + j$$ произведения (0-индексация). После этог
     }
 };
 
-ostream&amp; operator&lt;&lt;(ostream&amp; out, const bigint&amp; num) {
+ostream& operator<<(ostream& out, const bigint& num) {
     string result;
 
     char buffer[10];
@@ -382,21 +395,22 @@ ostream&amp; operator&lt;&lt;(ostream&amp; out, const bigint&amp; num) {
 
     int first_idx = result.find_first_not_of('0');
     if (first_idx == string::npos) {
-        out &lt;&lt; "0";
+        out << "0";
     } else {
-        out &lt;&lt; result.substr(first_idx);
+        out << result.substr(first_idx);
     }
 
     return out;
 }
-</code></pre>
+{% endhighlight %}
 
-<p>Разумеется, если в задаче требуются не все операции, можно реализовывать
-только некоторые из них.</p>
 
-<h3>Длинная арифметика в разных языках программирования</h3>
+Разумеется, если в задаче требуются не все операции, можно реализовывать
+только некоторые из них.
 
-<p>В последнее время на олимпиадах длинная арифметика встречается всё реже и
+### Длинная арифметика в разных языках программирования
+
+В последнее время на олимпиадах длинная арифметика встречается всё реже и
 реже, и есть вероятность, что скоро она исчезнет насовсем. Главным образом
 это связано с постепенным включением в списки допустимых языков Java и Python,
 в которых длинная арифметика встроена в стандартную библиотеку. Из-за этого
@@ -404,4 +418,4 @@ ostream&amp; operator&lt;&lt;(ostream&amp; out, const bigint&amp; num) {
 участников, использующих C++ с участниками, использующими Java и Python,
 составители задач стараются избегать задач на банальные длинные арифметические
 операции. Хотя сама концепция длинных чисел всё ещё встречается, задачи имеют
-несколько другой вид.</p>
+несколько другой вид.

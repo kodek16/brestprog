@@ -9,6 +9,10 @@ pre {
   margin-bottom: 2px;
 }
 
+blockquote {
+  font-style: normal;
+}
+
 .footer-col-1 {
   width: -webkit-calc(40% - (#{$spacing-unit} / 2));
   width:         calc(40% - (#{$spacing-unit} / 2));
