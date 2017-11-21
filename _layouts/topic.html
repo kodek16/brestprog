@@ -1,27 +1,7 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }} - brestprog</title>
-    <link rel="stylesheet" href="/styles/syntax.css">
-    
-    <!-- Bootstrap 4 beta -->
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-          crossorigin="anonymous">
+---
+layout: page
+---
+{{ content }}
 
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          {{ content }}
-        </div>
-      </div>
-    </div>
-
-    <!-- MathJax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-  </body>
-</html>
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>

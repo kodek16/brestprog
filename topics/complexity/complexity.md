@@ -2,8 +2,6 @@
 layout: topic
 title: Асимптотика
 ---
-# Асимптотика
-
 Какой-то там текст.
 
 {% capture source %}{% include_relative naive.cc %}{% endcapture %}
