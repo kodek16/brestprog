@@ -1,3 +1,8 @@
+# Swap files
+*~
+*.swp
+*.swo
+
 # New (Jekyll) stuff.
 _site
 .sass-cache
