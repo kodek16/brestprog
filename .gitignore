@@ -1,3 +1,9 @@
+# New (Jekyll) stuff.
+_site
+.sass-cache
+.jekyll-metadata
+
+# Old (Node) stuff.
 node_modules
 dist
 tmp
