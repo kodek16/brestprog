@@ -1,3 +1,9 @@
-node_modules
-dist
-tmp
+# Swap files
+*~
+*.swp
+*.swo
+
+# Jekyll stuff.
+_site
+.sass-cache
+.jekyll-metadata
