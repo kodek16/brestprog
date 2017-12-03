@@ -50,7 +50,7 @@ def ExecuteTestCc(filename):
     with tempfile.TemporaryDirectory() as temp_dir:
         executable_path = os.path.join(temp_dir, 'test.exe')
 
-        compile_command = ['g++', '--std=c++14', '-O2',
+        compile_command = ['g++', '-std=c++17', '-O2',
                            '-Itests/include', '-o', executable_path, filename]
         compile_process = subprocess.run(
             compile_command, stderr=subprocess.PIPE)
