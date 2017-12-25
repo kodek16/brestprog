@@ -54,7 +54,7 @@ std::string Repeat(const std::string& s,
     result += s;
   }
 
-  return std::move(result);
+  return result;
 }
 
 // Prints a range of numbers to a string (like "1 2 3 4 5").
@@ -67,7 +67,7 @@ std::string RangeString(T first, T last, const std::string& delimiter = " ") {
   }
 
   result += std::to_string(last);
-  return std::move(result);
+  return result;
 }
 
 std::forward_list<std::string> _ConcatToList() {
@@ -92,7 +92,7 @@ std::string Concat(const T& t, Rest ...rest) {
     result += std::move(element);
   }
 
-  return std::move(result);
+  return result;
 }
 
 bool IsEmpty(const std::string& s) { return s == ""; }
@@ -114,10 +114,19 @@ template <typename T>
 Debug(T t) -> Debug<T>;
 
 template <> struct Debug<std::string> {
+  // Longer string are truncated.
+  static const int MAX_LENGTH = 60;
+
   Debug(const std::string& s) : s(s) { }
 
   std::string print() {
-    return std::string("\"") + s + "\"";
+    if (s.length() <= MAX_LENGTH) {
+      return Concat("\"", s, "\"");
+    } else {
+      return Concat(
+          "\"", s.substr(0, MAX_LENGTH), "... (length = ",
+          std::to_string(s.length()), ")\"");
+    }
   }
 
 private:
@@ -138,18 +147,29 @@ private:
 
 template <typename T>
 struct Debug<std::vector<T>> {
+  // If the vector is longer, the rest of the elements are omitted.
+  static const size_t PRINTED_ELEMENTS = 10;
+
   Debug(const std::vector<T>& v) : v(v) { }
 
   std::string print() {
+    int elements_to_print = std::min(v.size(), PRINTED_ELEMENTS);
+
     std::string result = "[";
 
-    for (size_t i = 0; i + 1 < v.size(); i++) {
-      result += Debug(v[i]).print();
+    for (size_t i = 0; i + 1 < elements_to_print; i++) {
+      result += Debug<T>(v[i]).print();
       result += ',';
     }
 
-    if (v.size()) {
-      result += Debug(v.back()).print();
+    if (elements_to_print) {
+      result += Debug<T>(v[elements_to_print - 1]).print();
+    }
+
+    if (elements_to_print < v.size()) {
+      result += ", ...";
+      result += std::to_string(v.size() - elements_to_print);
+      result += " more element(s)";
     }
 
     result += ']';
@@ -177,11 +197,15 @@ private:
 // Assertions
 
 template <typename T>
-void _AssertEq(const T& a, const T& b,
+void _AssertEq(const T& a, const T& b, const std::string& context,
                const char *file, int line, const char *func) {
   if (!(a == b)) {
     std::cerr << file << ":" << line << ": " << func << ": Assertion failed!\n";
+    if (context != "") {
+      std::cerr << "Context: " << context << std::endl;
+    }
     std::cerr << Debug(a).print() << " != " << Debug(b).print() << std::endl;
+
     std::exit(1);
   }
 }
@@ -197,7 +221,8 @@ void _AssertMatches(const std::string& out, const Checker& checker,
   }
 }
 
-#define AssertEq(a, b) _AssertEq(a, b, __FILE__, __LINE__, __func__)
+#define AssertEq(a, b) _AssertEq(a, b, "", __FILE__, __LINE__, __func__)
+#define AssertEqC(a, b, context) _AssertEq(a, b, context, __FILE__, __LINE__, __func__)
 #define AssertMatches(out, c) _AssertMatches(out, c, __FILE__, __LINE__, __func__)
 
 
@@ -270,8 +295,30 @@ public:
   }
 
   std::string debug() const {
-    return std::string(
-        "LiteralTokenChecker[" + Debug(expected_output).print() + "]");
+    return (std::string("LiteralTokenChecker[")
+            + Debug(expected_output).print()
+            + "]");
+  }
+
+private:
+  std::string expected_output;
+};
+
+// The strictest output checker that compares output character-by-character,
+// not allowing even minor mismatches.
+struct ExactOutputChecker {
+public:
+  ExactOutputChecker(const std::string& expected_output)
+      : expected_output(expected_output) { }
+
+  bool matches(const std::string& actual_output) const {
+    return actual_output == expected_output;
+  }
+
+  std::string debug() const {
+    return (std::string("ExactOutputChecker[")
+            + Debug(expected_output).print()
+            + "]");
   }
 
 private:
