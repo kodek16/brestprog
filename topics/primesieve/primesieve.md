@@ -4,7 +4,7 @@ title: Решето Эратосфена
 permalink: topics/primesieve
 ---
 
-### Определение
+## Определение
 
 Решето Эратосфена - достаточно эффективный алгоритм для нахождения
 *всех* простых чисел в отрезке от $$1$$ до $$N$$ за $$O(N \log \log N)$$.
@@ -16,16 +16,16 @@ permalink: topics/primesieve
 
 Визуализация работы решета Эратосфена:
 
-<img style="display: block; margin: auto" src="/resources/eratosthenes.gif" />
+![Решето Эратосфена](eratosthenes.gif)
 
 Работу решета можно значительно ускорить, если начинать зачёркивать
 числа, кратные $$p$$, не с $$2p$$, а с $$p^2$$. Ведь числа $$2p, 3p, 5p, \ldots$$ уже
 были зачёркнуты при обработке чисел $$2, 3, 5, \ldots$$
 
-### Реализация
+## Реализация
 
 {% highlight cpp linenos %}
-
+#include <bits/stdc++.h>
 
 using namespace std;
 
