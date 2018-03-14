@@ -100,8 +100,8 @@ permalink: topics/graphs
 <!-- TODO this layout could be better -->
 
 <div style="display: block; margin: auto">
-  <img style="display: inline" width="300" src="Tree1.png" /> <img style="display: inline" width="300" src="Tree2.png" />
-  <img style="display: inline" width="300" src="Tree3.png" /> <img style="display: inline" width="300" src="Tree4.png" />
+  <img style="display: inline" width="300" src="./Tree1.png" /> <img style="display: inline" width="300" src="./Tree2.png" />
+  <img style="display: inline" width="300" src="./Tree3.png" /> <img style="display: inline" width="300" src="./Tree4.png" />
 </div>
 Среди множества свойств деревьев можно выделить два самых известных:
 

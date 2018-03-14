@@ -20,7 +20,7 @@ permalink: topics/bfs
 вершины с номером $$i$$ (длина кратчайшего пути в рёбрах). BFS посещает вершины
 в порядке возрастания $$d[i]$$: от наименее до наиболее отдалённых.
 
-<img style="display: block; margin: auto; width: 500px" src="Animated_BFS.gif" />
+<img style="display: block; margin: auto; width: 500px" src="./Animated_BFS.gif" />
 
 Серым помечены вершины в очереди на посещение, чёрным - уже посещённые.
 
