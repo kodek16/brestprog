@@ -15,13 +15,13 @@ permalink: topics/graphcycles/
 
 Для поиска цикла будем использовать DFS. Для примера разберём такой граф:
 
-<img style="display: block; margin: auto" src="/resources/graph_cycles.png" />
+![Граф с циклом](graph_cycles.png)
 
 Допустим, мы запустили DFS из вершины 1, и он полностью обошёл граф.
 Представим обход этого графа так же, как представляем деревья, по уровням
 в зависимости от глубины рекурсии:
 
-<img style="display: block; margin: auto" src="/resources/graph_cycles2.png" />
+![Граф с циклом с обозначенным ребром](graph_cycles2.png)
 
 (Примечание: это только один из возможных вариантов обхода в глубину.)
 
@@ -34,7 +34,7 @@ permalink: topics/graphcycles/
 ### Реализация
 
 {% highlight cpp linenos %}
-
+#include <bits/stdc++.h>
 
 using namespace std;
 
