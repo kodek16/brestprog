@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Решето Эратосфена
-permalink: topics/primesieve
+permalink: topics/primesieve/
 ---
 
 ## Определение

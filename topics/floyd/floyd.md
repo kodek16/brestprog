@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Алгоритм Флойда-Уоршелла
-permalink: topics/floyd
+permalink: topics/floyd/
 ---
 
 ### Алгоритм

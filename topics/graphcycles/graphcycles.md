@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Проверка графа на наличие циклов
-permalink: topics/graphcycles
+permalink: topics/graphcycles/
 ---
 
 ### Постановка задачи

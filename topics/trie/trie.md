@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Бор
-permalink: topics/trie
+permalink: topics/trie/
 ---
 
 ### Опредение

@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Разложение числа на простые множители (факторизация). Делители числа
-permalink: topics/factorization
+permalink: topics/factorization/
 ---
 
 ## Представление числа в виде произведения простых множителей

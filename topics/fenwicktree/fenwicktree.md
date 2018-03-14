@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Дерево Фенвика
-permalink: topics/fenwicktree
+permalink: topics/fenwicktree/
 ---
 
 ### Определение

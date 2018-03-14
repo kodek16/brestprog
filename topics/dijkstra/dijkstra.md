@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Взвешенные графы. Алгоритм Дейкстры
-permalink: topics/dijkstra
+permalink: topics/dijkstra/
 ---
 
 ### Взвешенные графы

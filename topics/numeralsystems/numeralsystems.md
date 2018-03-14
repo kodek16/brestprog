@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Системы счисления
-permalink: topics/numeralsystems
+permalink: topics/numeralsystems/
 ---
 
 ## Системы счисления в задачах

@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Z-функция
-permalink: topics/zfunction
+permalink: topics/zfunction/
 ---
 
 ### Определение

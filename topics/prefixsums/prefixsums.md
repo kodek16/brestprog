@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Префиксные суммы. XOR
-permalink: topics/prefixsums
+permalink: topics/prefixsums/
 ---
 
 ### Задачи на запросы

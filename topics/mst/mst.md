@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Минимальное остовное дерево. Алгоритм Прима. Алгоритм Крускала
-permalink: topics/mst
+permalink: topics/mst/
 ---
 
 ### Минимальное остовное дерево

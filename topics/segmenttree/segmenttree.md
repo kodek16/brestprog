@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Дерево отрезков
-permalink: topics/segmenttree
+permalink: topics/segmenttree/
 ---
 
 ### Определение

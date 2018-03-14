@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Понятие асимптотической сложности
-permalink: topics/complexity
+permalink: topics/complexity/
 ---
 
 ## Вступление

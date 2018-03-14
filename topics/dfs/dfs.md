@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Рекурсия. Обход в глубину (DFS)
-permalink: topics/dfs
+permalink: topics/dfs/
 ---
 
 ## Краткое введение в рекурсию

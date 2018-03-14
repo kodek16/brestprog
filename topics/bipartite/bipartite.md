@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Двудольные графы. Проверка графа на двудольность
-permalink: topics/bipartite
+permalink: topics/bipartite/
 ---
 
 ### Определение двудольного графа

@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Операции по модулю
-permalink: topics/modulo
+permalink: topics/modulo/
 ---
 
 ## Математические термины

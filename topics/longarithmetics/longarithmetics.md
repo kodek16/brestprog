@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Длинная арифметика
-permalink: topics/longarithmetics
+permalink: topics/longarithmetics/
 ---
 
 ### Определение

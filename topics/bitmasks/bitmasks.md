@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Битовые маски. Динамическое программирование по маскам
-permalink: topics/bitmasks
+permalink: topics/bitmasks/
 ---
 
 ### Битовые маски

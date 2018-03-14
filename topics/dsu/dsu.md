@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Система непересекающихся множеств (DSU)
-permalink: topics/dsu
+permalink: topics/dsu/
 ---
 
 ### Определение

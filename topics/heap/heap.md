@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Полное бинарное дерево. Куча. Очередь с приоритетом
-permalink: topics/heap
+permalink: topics/heap/
 ---
 
 ### Бинарное дерево

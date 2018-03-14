@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Бинарный поиск
-permalink: topics/binsearch
+permalink: topics/binsearch/
 ---
 
 ## Определение

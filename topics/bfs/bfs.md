@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Обход в ширину (BFS)
-permalink: topics/bfs
+permalink: topics/bfs/
 ---
 
 ## Определение

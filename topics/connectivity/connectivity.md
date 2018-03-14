@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Поиск компонент связности
-permalink: topics/connectivity
+permalink: topics/connectivity/
 ---
 
 ### Определение компоненты связности

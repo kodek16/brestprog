@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: НОД. НОК. Алгоритм Евклида
-permalink: topics/gcd
+permalink: topics/gcd/
 ---
 
 ## Наибольший общий делитель

@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Сортировка
-permalink: topics/sort
+permalink: topics/sort/
 ---
 
 ## Вступление

@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Динамическое программирование на примерах
-permalink: topics/dp
+permalink: topics/dp/
 ---
 
 ### Определение

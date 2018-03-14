@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: "Простейшие структуры данных: стек, очередь, дек"
-permalink: topics/datastructures
+permalink: topics/datastructures/
 ---
 
 ## Понятие структуры данных

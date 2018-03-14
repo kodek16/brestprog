@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Префикс-функция. Алгоритм Кнута-Морриса-Пратта
-permalink: topics/prefixfunction
+permalink: topics/prefixfunction/
 ---
 
 ### Префикс-функция

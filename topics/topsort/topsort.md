@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Топологическая сортировка
-permalink: topics/topsort
+permalink: topics/topsort/
 ---
 
 ### Определение

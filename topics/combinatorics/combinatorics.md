@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Основные элементы комбинаторики
-permalink: topics/combinatorics
+permalink: topics/combinatorics/
 ---
 
 ## Комбинаторика

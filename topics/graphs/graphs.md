@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: "Понятие и представление графа: матрица смежности, список смежности"
-permalink: topics/graphs
+permalink: topics/graphs/
 ---
 
 ## Определение графа
