@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Список тем
+permalink: topics/
 ---
 
 * [Понятие асимптотической сложности]({{ site.baseurl }}{% link topics/complexity/complexity.md %})
