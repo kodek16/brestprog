@@ -18,8 +18,8 @@ email: brestprog@gmail.com
 lang: ru
 description: >- # this means to ignore newlines until "baseurl:"
   Олимпиадное программирование в Бресте и Беларуси
-baseurl: "/brestprog" # the subpath of your site, e.g. /blog
-url: "http://psenchanka.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://brestprog.by" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: psenchanka/brestprog
 
 # Build settings
