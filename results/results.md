@@ -14,4 +14,5 @@ permalink: results/
 
 ## Бресткая областная олимпиада
 
+* [2018, Брест]({{ "results/brest/2018" | relative_url }})
 * [2017, Брест]({{ "results/brest/2017" | relative_url }})
