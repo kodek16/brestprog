@@ -29,6 +29,7 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+  - jemoji
 
 # Theme settings
 header_pages:

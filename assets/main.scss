@@ -76,9 +76,14 @@ table:not(.rouge-table) {
   }
 }
 
+// TODO remove this, find a way to use a special class for images in topics.
 .post-content img {
   display: block;
   margin: auto;
+}
+
+.post-content img.emoji {
+  display: inline;
 }
 
 // Medal icons
