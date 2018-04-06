@@ -6,7 +6,19 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
-        {% include social.html %}
+        <!-- This is copy-pasted from social.html without escapes that broke the link -->
+        <ul class="social-media-list">
+          {%- if site.github_repository -%}
+          <li>
+            <a href="https://github.com/{{ site.github_repository }}">
+              <svg class="svg-icon">
+                <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
+              </svg>
+              <span class="username">{{ site.github_repository }}</span>
+            </a>
+          </li>
+          {%- endif -%}
+        </ul>
       </div>
 
       <div class="footer-col footer-col-2">
