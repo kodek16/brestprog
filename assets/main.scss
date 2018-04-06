@@ -51,28 +51,14 @@ blockquote {
   height: 100%;
 }
 
-// Copied from https://github.com/jekyll/minima/pull/144
-table:not(.rouge-table) {
-  margin-bottom: $spacing-unit;
-  width: 100%;
-  color: lighten($text-color, 18%);
-  border-collapse: collapse;
-  border: 1px solid $grey-color-light;
-  tr {
-    &:nth-child(even) {
-      background-color: lighten($grey-color-light, 6%);
-    }
-  }
-  th, td {
-    padding: ($spacing-unit / 3) ($spacing-unit / 2);
-  }
-  th {
-    background-color: lighten($grey-color-light, 3%);
-    border: 1px solid darken($grey-color-light, 4%);
-    border-bottom-color: darken($grey-color-light, 12%);
-  }
+// Strip some default table decorations from Minima.
+table.rouge-table {
+  margin-bottom: 0px;
+  border: 0px;
+  
   td {
-    border: 1px solid $grey-color-light;
+    padding: 0px ($spacing-unit / 4);
+    border: 0px;
   }
 }
 
