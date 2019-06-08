@@ -167,7 +167,7 @@ $$lcm(a, b) = {a * b \over \gcd(a, b)}$$
 Реализация на C++:
 
 {% highlight cpp linenos %}
-int gcd(int a, int b) {
+int lcm(int a, int b) {
     return a / gcd(a, b) * b;   //используя форму a * b / gcd(a, b),
                                 //можно получить переполнение на этапе a * b,
                                 //поэтому следует выполнять деление до умножения
