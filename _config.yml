@@ -20,7 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Олимпиадное программирование в Бресте и Беларуси
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://brestprog.by" # the base hostname & protocol for your site, e.g. http://example.com
-github_repository: psenchanka/brestprog
+github_repository: kodek16/brestprog
 
 google_analytics: UA-115799102-1
 
