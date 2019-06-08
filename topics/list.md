@@ -13,6 +13,7 @@ permalink: topics/
 * [Операции по модулю]({{ "topics/modulo/" | relative_url }})
 * [Системы счисления]({{ "topics/numeralsystems/" | relative_url }})
 * [Простейшие структуры данных: стек, очередь, дек]({{ "topics/datastructures/" | relative_url }})
+* [(C++) Контейнеры: map, set, multiset]({{ "topics/containers/" | relative_url }})
 * [Понятие и представление графа: матрица смежности, список смежности]({{ "topics/graphs/" | relative_url }})
 * [Обход в ширину (BFS)]({{ "topics/bfs/" | relative_url }})
 * [Рекурсия. Обход в глубину (DFS)]({{ "topics/dfs/" | relative_url }})
