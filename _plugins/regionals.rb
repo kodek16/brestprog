@@ -65,8 +65,10 @@ module Brestprog
 
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'results_page.html')
+      self.data['wide'] = year.to_i >= 2019
       self.data['title'] = 'Брест, областная олимпиада, %s' % year
       self.data['results'] = self.collect_results(site, year)
+      self.data['has_task_breakup'] = year.to_i >= 2019
     end
 
     def collect_results(site, year)
@@ -81,9 +83,9 @@ module Brestprog
           'college' => entry['college'],
           'participant' => participants[entry['participant']],
           'school' => schools[entry['school']],
-          'tasks' => entry['tasks'].map(&method(:format_score)),
+          'tasks' => (entry['tasks'].map(&method(:format_score)) if entry['tasks']),
           'total' => format_score(entry['total']),
-        }
+        }.compact
       end
     end
 
