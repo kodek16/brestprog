@@ -1,0 +1,50 @@
+---
+layout: page
+wide: true
+---
+<table class="results-table">
+  <tr>
+    <th>Место</th>
+    <th>Участник</th>
+    <th>Школа</th>
+    <th>Класс</th>
+    <th>1-1</th>
+    <th>1-2</th>
+    <th>1-3</th>
+    <th>1-4</th>
+    <th>2-1</th>
+    <th>2-2</th>
+    <th>2-3</th>
+    <th>2-4</th>
+    <th>Сумма</th>
+  </tr>
+
+  {% for entry in page.results %}
+    <tr>
+      <td>
+        <span {%if entry.qualified %} class="qualified" {% endif %}>{{ entry.rank }}</span>
+        {% case entry.award %}
+        {% when 'gold' %}
+          <img src='{{ "/assets/gold.png" | relative_url }}' class='medal' />
+        {% when 'silver' %}
+          <img src='{{ "/assets/silver.png" | relative_url }}' class='medal' />
+        {% when 'bronze' %}
+          <img src='{{ "/assets/bronze.png" | relative_url }}' class='medal' />
+        {% endcase %}
+      </td>
+      <td>{{ entry.participant.name.ru.first }} {{ entry.participant.name.ru.last }}</td>
+      <td>{{ entry.school.name.ru }}</td>
+      <td>{{ entry.grade }} {% if entry.college %}курс{% endif %}</td>
+      <td>{{ entry.tasks[0] }}</td>
+      <td>{{ entry.tasks[1] }}</td>
+      <td>{{ entry.tasks[2] }}</td>
+      <td>{{ entry.tasks[3] }}</td>
+      <td>{{ entry.tasks[4] }}</td>
+      <td>{{ entry.tasks[5] }}</td>
+      <td>{{ entry.tasks[6] }}</td>
+      <td>{{ entry.tasks[7] }}</td>
+      <td>{{ entry.total }}</td>
+    </tr>
+  {% endfor %}
+</table>
+</div>

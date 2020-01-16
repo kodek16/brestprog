@@ -1,0 +1,11 @@
+{
+  "id": 4,
+  "name": {
+    "ru": {
+      "first": "Павел",
+      "patronymic": "Юрьевич",
+      "last": "Кузьмук"
+    }
+  },
+  "graduation": 2019
+}
