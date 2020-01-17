@@ -63,12 +63,15 @@ module Brestprog
       @dir = dir
       @name = "#{year}.html"
 
+      results = self.collect_results(site, year)
+      has_task_breakup = results[0].has_key? 'tasks'
+
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'results_page.html')
-      self.data['wide'] = year.to_i >= 2019
+      self.data['wide'] = has_task_breakup
       self.data['title'] = 'Брест, областная олимпиада, %s' % year
-      self.data['results'] = self.collect_results(site, year)
-      self.data['has_task_breakup'] = year.to_i >= 2019
+      self.data['results'] = results
+      self.data['has_task_breakup'] = has_task_breakup
     end
 
     def collect_results(site, year)

@@ -1,0 +1,802 @@
+[
+  {
+    "rank": 1,
+    "award": "gold",
+    "qualified": true,
+    "participant": 75,
+    "school": 1,
+    "grade": 10,
+    "college": false,
+    "total": 75300,
+    "tasks": [
+      10000,
+      10000,
+      10000,
+      10000,
+      10000,
+      6500,
+      10000,
+      8800
+    ]
+  },
+  {
+    "rank": 2,
+    "award": "gold",
+    "qualified": true,
+    "participant": 95,
+    "school": 2,
+    "grade": 11,
+    "college": false,
+    "total": 69798,
+    "tasks": [
+      10000,
+      10000,
+      3500,
+      8000,
+      10000,
+      9500,
+      10000,
+      8798
+    ]
+  },
+  {
+    "rank": 3,
+    "award": "gold",
+    "qualified": true,
+    "participant": 96,
+    "school": 1,
+    "grade": 11,
+    "college": false,
+    "total": 69500,
+    "tasks": [
+      10000,
+      10000,
+      9500,
+      10000,
+      10000,
+      0,
+      10000,
+      10000
+    ]
+  },
+  {
+    "rank": 4,
+    "award": "gold",
+    "qualified": true,
+    "participant": 1,
+    "school": 1,
+    "grade": 9,
+    "college": false,
+    "total": 66946,
+    "tasks": [
+      10000,
+      10000,
+      8500,
+      8000,
+      10000,
+      6000,
+      7500,
+      6946
+    ]
+  },
+  {
+    "rank": 5,
+    "award": "silver",
+    "qualified": true,
+    "participant": 78,
+    "school": 2,
+    "grade": 10,
+    "college": false,
+    "total": 66096,
+    "tasks": [
+      10000,
+      10000,
+      7000,
+      8000,
+      10000,
+      5500,
+      8500,
+      7096
+    ]
+  },
+  {
+    "rank": 6,
+    "award": "silver",
+    "qualified": true,
+    "participant": 2,
+    "school": 2,
+    "grade": 9,
+    "college": false,
+    "total": 65298,
+    "tasks": [
+      10000,
+      10000,
+      9000,
+      0,
+      10000,
+      7500,
+      10000,
+      8798
+    ]
+  },
+  {
+    "rank": 7,
+    "award": "silver",
+    "qualified": true,
+    "participant": 97,
+    "school": 8,
+    "grade": 11,
+    "college": false,
+    "total": 60200,
+    "tasks": [
+      10000,
+      10000,
+      3500,
+      8000,
+      10000,
+      6500,
+      8500,
+      3700
+    ]
+  },
+  {
+    "rank": 8,
+    "award": "silver",
+    "qualified": true,
+    "participant": 98,
+    "school": 4,
+    "grade": 11,
+    "college": false,
+    "total": 59387,
+    "tasks": [
+      10000,
+      10000,
+      1500,
+      4000,
+      10000,
+      9000,
+      7000,
+      7887
+    ]
+  },
+  {
+    "rank": 9,
+    "award": "silver",
+    "qualified": true,
+    "participant": 76,
+    "school": 2,
+    "grade": 10,
+    "college": false,
+    "total": 57383,
+    "tasks": [
+      10000,
+      10000,
+      4000,
+      8000,
+      10000,
+      6500,
+      5000,
+      3883
+    ]
+  },
+  {
+    "rank": 10,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 3,
+    "school": 2,
+    "grade": 9,
+    "college": false,
+    "total": 57095,
+    "tasks": [
+      10000,
+      10000,
+      0,
+      7000,
+      10000,
+      3500,
+      10000,
+      6595
+    ]
+  },
+  {
+    "rank": 11,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 99,
+    "school": 37,
+    "grade": 11,
+    "college": false,
+    "total": 56488,
+    "tasks": [
+      10000,
+      10000,
+      1000,
+      2000,
+      10000,
+      6500,
+      8500,
+      8488
+    ]
+  },
+  {
+    "rank": 12,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 81,
+    "school": 7,
+    "grade": 10,
+    "college": false,
+    "total": 55797,
+    "tasks": [
+      10000,
+      10000,
+      0,
+      7000,
+      10000,
+      4000,
+      8500,
+      6297
+    ]
+  },
+  {
+    "rank": 13,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 100,
+    "school": 11,
+    "grade": 11,
+    "college": false,
+    "total": 54825,
+    "tasks": [
+      10000,
+      10000,
+      2500,
+      6500,
+      10000,
+      4500,
+      7000,
+      4325
+    ]
+  },
+  {
+    "rank": 14,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 101,
+    "school": 38,
+    "grade": 11,
+    "college": false,
+    "total": 50389,
+    "tasks": [
+      10000,
+      10000,
+      1000,
+      0,
+      10000,
+      6500,
+      5000,
+      7889
+    ]
+  },
+  {
+    "rank": 15,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 77,
+    "school": 6,
+    "grade": 10,
+    "college": false,
+    "total": 45326,
+    "tasks": [
+      8000,
+      2000,
+      0,
+      6000,
+      10000,
+      6500,
+      5000,
+      7826
+    ]
+  },
+  {
+    "rank": 16,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 102,
+    "school": 39,
+    "grade": 11,
+    "college": false,
+    "total": 43726,
+    "tasks": [
+      10000,
+      10000,
+      2500,
+      0,
+      10000,
+      1500,
+      3000,
+      6726
+    ]
+  },
+  {
+    "rank": 17,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 90,
+    "school": 3,
+    "grade": 10,
+    "college": false,
+    "total": 37200,
+    "tasks": [
+      8000,
+      2000,
+      0,
+      0,
+      10000,
+      6000,
+      8500,
+      2700
+    ]
+  },
+  {
+    "rank": 18,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 103,
+    "school": 40,
+    "grade": 10,
+    "college": false,
+    "total": 36995,
+    "tasks": [
+      7000,
+      7000,
+      500,
+      0,
+      10000,
+      2000,
+      5000,
+      5495
+    ]
+  },
+  {
+    "rank": 19,
+    "award": "",
+    "qualified": false,
+    "participant": 104,
+    "school": 23,
+    "grade": 11,
+    "college": false,
+    "total": 35589,
+    "tasks": [
+      8000,
+      10000,
+      0,
+      0,
+      10000,
+      0,
+      4500,
+      3089
+    ]
+  },
+  {
+    "rank": 20,
+    "award": "",
+    "qualified": false,
+    "participant": 105,
+    "school": 23,
+    "grade": 11,
+    "college": false,
+    "total": 33789,
+    "tasks": [
+      8500,
+      7000,
+      0,
+      0,
+      10000,
+      0,
+      5500,
+      2789
+    ]
+  },
+  {
+    "rank": 21,
+    "award": "",
+    "qualified": false,
+    "participant": 20,
+    "school": 41,
+    "grade": 9,
+    "college": false,
+    "total": 32005,
+    "tasks": [
+      6000,
+      2000,
+      0,
+      0,
+      10000,
+      0,
+      8500,
+      5505
+    ]
+  },
+  {
+    "rank": 22,
+    "award": "",
+    "qualified": false,
+    "participant": 106,
+    "school": 42,
+    "grade": 10,
+    "college": false,
+    "total": 30699,
+    "tasks": [
+      6000,
+      6500,
+      0,
+      0,
+      10000,
+      1500,
+      4000,
+      2699
+    ]
+  },
+  {
+    "rank": 23,
+    "award": "",
+    "qualified": false,
+    "participant": 82,
+    "school": 13,
+    "grade": 10,
+    "college": false,
+    "total": 30500,
+    "tasks": [
+      8000,
+      7000,
+      1000,
+      0,
+      10000,
+      2000,
+      500,
+      2000
+    ]
+  },
+  {
+    "rank": 24,
+    "award": "",
+    "qualified": false,
+    "participant": 107,
+    "school": 43,
+    "grade": 11,
+    "college": false,
+    "total": 30394,
+    "tasks": [
+      6000,
+      0,
+      500,
+      0,
+      10000,
+      0,
+      6500,
+      7394
+    ]
+  },
+  {
+    "rank": 25,
+    "award": "",
+    "qualified": false,
+    "participant": 108,
+    "school": 36,
+    "grade": 11,
+    "college": false,
+    "total": 29500,
+    "tasks": [
+      6000,
+      2000,
+      5000,
+      0,
+      10000,
+      6500,
+      0,
+      0
+    ]
+  },
+  {
+    "rank": 26,
+    "award": "",
+    "qualified": false,
+    "participant": 33,
+    "school": 11,
+    "grade": 9,
+    "college": false,
+    "total": 29500,
+    "tasks": [
+      2500,
+      0,
+      2000,
+      0,
+      10000,
+      6500,
+      7500,
+      1000
+    ]
+  },
+  {
+    "rank": 27,
+    "award": "",
+    "qualified": false,
+    "participant": 6,
+    "school": 3,
+    "grade": 9,
+    "college": false,
+    "total": 29500,
+    "tasks": [
+      10000,
+      7000,
+      1000,
+      0,
+      10000,
+      0,
+      1500,
+      0
+    ]
+  },
+  {
+    "rank": 28,
+    "award": "",
+    "qualified": false,
+    "participant": 47,
+    "school": 1,
+    "grade": 7,
+    "college": false,
+    "total": 24789,
+    "tasks": [
+      6000,
+      2000,
+      0,
+      0,
+      2000,
+      2000,
+      7000,
+      5789
+    ]
+  },
+  {
+    "rank": 29,
+    "award": "",
+    "qualified": false,
+    "participant": 109,
+    "school": 44,
+    "grade": 8,
+    "college": false,
+    "total": 24000,
+    "tasks": [
+      7000,
+      2000,
+      0,
+      0,
+      10000,
+      0,
+      5000,
+      0
+    ]
+  },
+  {
+    "rank": 30,
+    "award": "",
+    "qualified": false,
+    "participant": 110,
+    "school": 13,
+    "grade": 11,
+    "college": false,
+    "total": 23444,
+    "tasks": [
+      6000,
+      2000,
+      1000,
+      0,
+      10000,
+      0,
+      0,
+      4444
+    ]
+  },
+  {
+    "rank": 31,
+    "award": "",
+    "qualified": false,
+    "participant": 25,
+    "school": 13,
+    "grade": 9,
+    "college": false,
+    "total": 23282,
+    "tasks": [
+      6000,
+      2000,
+      0,
+      0,
+      3000,
+      6500,
+      2000,
+      3782
+    ]
+  },
+  {
+    "rank": 32,
+    "award": "",
+    "qualified": false,
+    "participant": 111,
+    "school": 6,
+    "grade": 10,
+    "college": false,
+    "total": 22289,
+    "tasks": [
+      0,
+      2000,
+      0,
+      0,
+      10000,
+      500,
+      5000,
+      4789
+    ]
+  },
+  {
+    "rank": 33,
+    "award": "",
+    "qualified": false,
+    "participant": 112,
+    "school": 45,
+    "grade": 10,
+    "college": false,
+    "total": 19911,
+    "tasks": [
+      1500,
+      2000,
+      0,
+      0,
+      7000,
+      0,
+      4500,
+      4911
+    ]
+  },
+  {
+    "rank": 34,
+    "award": "",
+    "qualified": false,
+    "participant": 113,
+    "school": 46,
+    "grade": 8,
+    "college": false,
+    "total": 19000,
+    "tasks": [
+      6000,
+      2000,
+      0,
+      0,
+      8000,
+      0,
+      2000,
+      1000
+    ]
+  },
+  {
+    "rank": 35,
+    "award": "",
+    "qualified": false,
+    "participant": 114,
+    "school": 47,
+    "grade": 11,
+    "college": false,
+    "total": 18399,
+    "tasks": [
+      2000,
+      0,
+      0,
+      0,
+      8000,
+      0,
+      5000,
+      3399
+    ]
+  },
+  {
+    "rank": 36,
+    "award": "",
+    "qualified": false,
+    "participant": 93,
+    "school": 13,
+    "grade": 8,
+    "college": false,
+    "total": 18000,
+    "tasks": [
+      8000,
+      2000,
+      0,
+      0,
+      2000,
+      2000,
+      2000,
+      2000
+    ]
+  },
+  {
+    "rank": 37,
+    "award": "",
+    "qualified": false,
+    "participant": 94,
+    "school": 36,
+    "grade": 9,
+    "college": false,
+    "total": 16000,
+    "tasks": [
+      1000,
+      2000,
+      1000,
+      0,
+      10000,
+      0,
+      0,
+      2000
+    ]
+  },
+  {
+    "rank": 38,
+    "award": "",
+    "qualified": false,
+    "participant": 115,
+    "school": 14,
+    "grade": 10,
+    "college": false,
+    "total": 16000,
+    "tasks": [
+      6000,
+      0,
+      0,
+      0,
+      10000,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "rank": 39,
+    "award": "",
+    "qualified": false,
+    "participant": 116,
+    "school": 48,
+    "grade": 11,
+    "college": false,
+    "total": 2000,
+    "tasks": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2000
+    ]
+  },
+  {
+    "rank": 40,
+    "award": "",
+    "qualified": false,
+    "participant": 117,
+    "school": 49,
+    "grade": 10,
+    "college": false,
+    "total": 500,
+    "tasks": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      500,
+      0,
+      0
+    ]
+  }
+]
