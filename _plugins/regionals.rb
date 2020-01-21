@@ -5,8 +5,10 @@ module Brestprog
       site.data['dynamic']['participants'] = ParticipantsData.new(site)
       site.data['dynamic']['schools'] = SchoolsData.new(site)
 
-      site.data['contests']['regionals'].each_key do |year|
-        site.pages << RegionalsResultsPage.new(site, site.source, 'results/brest', year)
+      site.data['contests']['regionals'].each do |year, results|
+        results.each_key do |region|
+          site.pages << RegionalsResultsPage.new(site, site.source, region, year)
+        end
       end
     end
   end
@@ -57,25 +59,36 @@ module Brestprog
   class RegionalsResultsPage < Jekyll::Page
     include DynamicDataPage
 
-    def initialize(site, base, dir, year)
+    REGION_CONTEST_NAMES = {
+      'brest' => 'Брест, областная олимпиада',
+      'viciebsk' => 'Витебск, областная олимпиада',
+      'hrodna' => 'Гродно, областная олимпиада',
+      'homiel' => 'Гомель, областная олимпиада',
+      'mahiliou' => 'Могилёв, областная олимпиада',
+      'minsk-voblasc' => 'Минск, областная олимпиада',
+      'minsk-horad' => 'Минск, городская олимпиада',
+      'licej-bdu' => 'Лицей БГУ, третий этап республиканской олимпиады',
+    }
+
+    def initialize(site, base, region, year)
       @site = site
       @base = base
-      @dir = dir
+      @dir = "results/#{region}"
       @name = "#{year}.html"
 
-      results = self.collect_results(site, year)
+      results = self.collect_results(site, region, year)
       has_task_breakup = results[0].has_key? 'tasks'
 
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'results_page.html')
       self.data['wide'] = has_task_breakup
-      self.data['title'] = 'Брест, областная олимпиада, %s' % year
+      self.data['title'] = "#{REGION_CONTEST_NAMES[region]}, #{year}"
       self.data['results'] = results
       self.data['has_task_breakup'] = has_task_breakup
     end
 
-    def collect_results(site, year)
-      raw = site.data['contests']['regionals'][year]['brest']['results']
+    def collect_results(site, region, year)
+      raw = site.data['contests']['regionals'][year][region]['results']
 
       raw.map do |entry|
         {
