@@ -25,3 +25,4 @@ permalink: results/
 ## г. Минск, городская олимпиада
 
 * [2020, Минск]({{ "results/minsk-horad/2020" | relative_url }})
+* [2017, Минск]({{ "results/minsk-horad/2017" | relative_url }})
