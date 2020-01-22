@@ -24,6 +24,7 @@ permalink: results/
 
 ## Витебск, областная олимпиада
 
+* [2018, Витебск]({{ "results/viciebsk/2018" | relative_url }})
 * [2017, Витебск]({{ "results/viciebsk/2017" | relative_url }})
 
 ## г. Минск, городская олимпиада
