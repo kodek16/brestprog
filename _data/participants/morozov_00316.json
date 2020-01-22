@@ -1,12 +1,12 @@
 {
-  "id": 209,
+  "id": 316,
   "name": {
     "ru": {
       "first": "Илья",
-      "patronymic": "Юрьевич",
+      "patronymic": "Вячеславович",
       "last": "Морозов"
     }
   },
   "graduation": 2017,
-  "distinguisher": "minsk"
+  "distinguisher": "viciebsk-morozov"
 }

@@ -22,6 +22,10 @@ permalink: results/
 * [2017, Брест]({{ "results/brest/2017" | relative_url }})
 * [2016, Брест]({{ "results/brest/2016" | relative_url }})
 
+## Витебск, областная олимпиада
+
+* [2017, Витебск]({{ "results/viciebsk/2017" | relative_url }})
+
 ## г. Минск, городская олимпиада
 
 * [2020, Минск]({{ "results/minsk-horad/2020" | relative_url }})
