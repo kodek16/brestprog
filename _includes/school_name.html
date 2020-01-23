@@ -1,0 +1,39 @@
+{% assign school = include.school %}
+
+<span>
+  {% case school.region %}
+  {% when 'Brest' %}
+    <img src='{{ "/assets/symbols/brest.svg" | relative_url }}'
+         title="Брестская область"
+         class='region-symbol' />
+  {% when 'Viciebsk' %}
+    <img src='{{ "/assets/symbols/viciebsk.svg" | relative_url }}'
+         title="Витебская область"
+         class='region-symbol' />
+  {% when 'Homieĺ' %}
+    <img src='{{ "/assets/symbols/homiel.svg" | relative_url }}'
+         title="Гомельская область"
+         class='region-symbol' />
+  {% when 'Hrodna' %}
+    <img src='{{ "/assets/symbols/hrodna.svg" | relative_url }}'
+         title="Гродненская область"
+         class='region-symbol' />
+  {% when 'Minsk-Voblaść' %}
+    <img src='{{ "/assets/symbols/minsk-voblasc.svg" | relative_url }}'
+         title="Минская область"
+         class='region-symbol' />
+  {% when 'Mahilioŭ' %}
+    <img src='{{ "/assets/symbols/mahiliou.svg" | relative_url }}'
+         title="Могилёвская область"
+         class='region-symbol' />
+  {% when 'Minsk-Horad' %}
+    <img src='{{ "/assets/symbols/minsk-horad.svg" | relative_url }}'
+         title="г. Минск"
+         class='region-symbol' />
+  {% when 'Licej-BDU' %}
+    <img src='{{ "/assets/symbols/licej-bdu.png.svg" | relative_url }}'
+         title="Лицей БГУ"
+         class='region-symbol' />
+  {% endcase %}
+  {{ school.name.ru }}
+</span>

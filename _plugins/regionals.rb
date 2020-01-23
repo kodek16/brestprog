@@ -5,9 +5,23 @@ module Brestprog
       site.data['dynamic']['participants'] = ParticipantsData.new(site)
       site.data['dynamic']['schools'] = SchoolsData.new(site)
 
+      populate_schools(site)
+
       site.data['contests']['regionals'].each do |year, results|
         results.each_key do |region|
           site.pages << RegionalsResultsPage.new(site, site.source, region, year)
+        end
+      end
+
+      site.data['dynamic']['participants'].all.each_key do |id|
+        site.pages << ParticipantProfilePage.new(site, site.source, id)
+      end
+    end
+
+    def populate_schools(site)
+      site.data['dynamic']['participants'].all.each_value do |participant|
+        participant['results']['regionals'].each_value do |entry|
+          entry['school'] = site.data['dynamic']['schools'][entry['school']]
         end
       end
     end
@@ -34,6 +48,24 @@ module Brestprog
     def initialize(site)
       @site = site
       @collection = 'participants'
+
+      site.data['contests']['regionals'].each do |year, all_results|
+        all_results.each do |region, results|
+          results['results'].each do |entry|
+            participant_id = entry['participant']
+            participant = self[participant_id]
+
+            participant['results'] ||= {}
+            participant['results']['regionals'] ||= {}
+            participant['results']['regionals'][year] = entry
+          end
+        end
+      end
+
+      all.each_value do |participant|
+        participant['results']['regionals'] = (
+          participant['results']['regionals'].sort.reverse!.to_h)
+      end
     end
   end
 
@@ -103,7 +135,7 @@ module Brestprog
           'grade' => entry['grade'],
           'college' => entry['college'],
           'participant' => participants[entry['participant']],
-          'school' => schools[entry['school']],
+          'school' => entry['school'],
           'tasks' => (entry['tasks'].map(&method(:format_score)) if entry['tasks']),
           'total' => format_score(entry['total']),
         }.compact
@@ -116,6 +148,31 @@ module Brestprog
       else
         ('%.2f' % (score / 100.0)).sub('.', ',')
       end
+    end
+  end
+
+  class ParticipantProfilePage < Jekyll::Page
+    include DynamicDataPage
+
+    def initialize(site, base, participant_id)
+      @site = site
+      @base = base
+      @dir = "participants"
+      @name = "#{participant_id}.html"
+
+      self.process(@name)
+      self.read_yaml(File.join(base, '_layouts'), 'participant_profile.html')
+
+      participant = participants[participant_id]
+      self.data['participant'] = participant
+
+      reg_results = participant['results']['regionals']
+
+      best_result_regionals = reg_results.min_by { |_, x| x['rank'] }
+      self.data['best_result_regionals'] = best_result_regionals
+
+      most_recent_school = reg_results.first[1]['school']
+      self.data['school'] = most_recent_school
     end
   end
 end

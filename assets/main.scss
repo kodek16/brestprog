@@ -5,6 +5,10 @@ $wide-content-width: 1280px;
 
 @import "{{ site.theme }}";
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .wide-wrapper {
   max-width: -webkit-calc(#{$wide-content-width} - (30px * 2));
   max-width: calc(#{$wide-content-width} - (30px * 2));
@@ -88,4 +92,11 @@ table.rouge-table {
   display: inline;
 }
 
+img.region-symbol {
+  display: inline;
+  height: 1.2em;
+  margin-right: 5px;
+};
+
 @import "results_page";
+@import "participant_profile";

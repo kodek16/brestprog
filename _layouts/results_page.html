@@ -23,17 +23,14 @@ layout: page
   {% for entry in page.results %}
     <tr>
       <td>
-        <span {%if entry.qualified %} class="qualified" {% endif %}>{{ entry.rank }}</span>
-        {% case entry.award %}
-        {% when 'gold' %}
-          <img src='{{ "/assets/gold.png" | relative_url }}' class='medal' />
-        {% when 'silver' %}
-          <img src='{{ "/assets/silver.png" | relative_url }}' class='medal' />
-        {% when 'bronze' %}
-          <img src='{{ "/assets/bronze.png" | relative_url }}' class='medal' />
-        {% endcase %}
+        {% include contest_result.html result=entry %}
       </td>
-      <td>{{ entry.participant.name.ru.first }} {{ entry.participant.name.ru.last }}</td>
+      <td>
+        <a href='{{ "/participants/" | append: entry.participant.id | relative_url }}'
+           class="entity-link">
+          {{ entry.participant.name.ru.first }} {{ entry.participant.name.ru.last }}
+        </a>
+      </td>
       <td>{{ entry.school.name.ru }}</td>
       <td>{{ entry.grade }} {% if entry.college %}курс{% endif %}</td>
       {% if page.has_task_breakup %}

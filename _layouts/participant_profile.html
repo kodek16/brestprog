@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+{% assign name = page.participant.name.ru %}
+
+<h1 class="participant-name">
+  {{ name.first }} {{ name.last }}
+</h1>
+
+<h1 class="current-school">
+  {% include school_name.html school=page.school %}
+</h1>
+
+<hr class="section-break" />
+
+{% assign best_year_regionals = page.best_result_regionals[0] %}
+{% assign best_result_regionals = page.best_result_regionals[1] %}
+
+<p class="best-result">
+Лучший результат в области:
+{% include contest_result.html result=best_result_regionals long=true %}
+({{ best_year_regionals }})
+</p>
+
+<hr class="section-break" />
+
+<table class="results-table">
+  <tr>
+    <th>Год</th>
+    <th>Школа</th>
+    <th>Класс</th>
+    <th>Областной этап</th>
+  </tr>
+
+  {% for kv in page.participant.results.regionals %}
+    {% assign year = kv[0] %}
+    {% assign entry = kv[1] %}
+    <tr>
+      <td>{{ year }}</td>
+      <td>{{ entry.school.name.ru }}</td>
+      <td>
+        {% include grade_text.html result=entry %}
+      </td>
+      <td>
+        {% include contest_result.html result=entry long=true %}
+      </td>
+    </tr>
+  {% endfor %}
+</table>

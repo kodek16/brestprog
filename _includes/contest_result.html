@@ -1,0 +1,14 @@
+{% assign result = include.result %}
+{% assign long = include.long %}
+
+<span>
+  <span {%if result.qualified %} class="qualified" {% endif %}>{{ result.rank }}{% if long %}-е место{% endif %}</span>
+  {% case result.award %}
+  {% when 'gold' %}
+    <img src='{{ "/assets/gold.png" | relative_url }}' class='medal' />
+  {% when 'silver' %}
+    <img src='{{ "/assets/silver.png" | relative_url }}' class='medal' />
+  {% when 'bronze' %}
+    <img src='{{ "/assets/bronze.png" | relative_url }}' class='medal' />
+  {% endcase %}
+</span>
