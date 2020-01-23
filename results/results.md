@@ -28,6 +28,10 @@ permalink: results/
 * [2018, Витебск]({{ "results/viciebsk/2018" | relative_url }})
 * [2017, Витебск]({{ "results/viciebsk/2017" | relative_url }})
 
+## Минская областная олимпиада
+
+* [2017]({{ "results/minsk-voblasc/2017" | relative_url }})
+
 ## г. Минск, городская олимпиада
 
 * [2020, Минск]({{ "results/minsk-horad/2020" | relative_url }})
