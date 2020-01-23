@@ -70,6 +70,10 @@ module Brestprog
       'licej-bdu' => 'Лицей БГУ, третий этап республиканской олимпиады',
     }
 
+    INCOMPLETE_RESULTS = [
+      ['viciebsk', 2018]
+    ]
+
     def initialize(site, base, region, year)
       @site = site
       @base = base
@@ -85,6 +89,7 @@ module Brestprog
       self.data['title'] = "#{REGION_CONTEST_NAMES[region]}, #{year}"
       self.data['results'] = results
       self.data['has_task_breakup'] = has_task_breakup
+      self.data['incomplete'] = INCOMPLETE_RESULTS.include? [region, year.to_i]
     end
 
     def collect_results(site, region, year)

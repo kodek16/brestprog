@@ -50,4 +50,11 @@ layout: page
     </tr>
   {% endfor %}
 </table>
+
+{% if page.incomplete %}
+  <div class="help-needed-callout">
+    К сожалению, результаты остальных участников пока не удалось восстановить.
+    Если у вас есть первоисточник, содержащий их, пожалуйста, пришлите его на нашу <a href="mailto:brestprog.by@gmail.com">почту</a>.
+  </div>
+{% endif %}
 </div>
