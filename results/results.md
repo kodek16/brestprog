@@ -21,6 +21,7 @@ permalink: results/
 * [2018, Брест]({{ "results/brest/2018" | relative_url }})
 * [2017, Брест]({{ "results/brest/2017" | relative_url }})
 * [2016, Брест]({{ "results/brest/2016" | relative_url }})
+* [2015, Брест]({{ "results/brest/2015" | relative_url }})
 
 ## Витебск, областная олимпиада
 
