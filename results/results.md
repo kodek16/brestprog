@@ -33,6 +33,7 @@ permalink: results/
 
 * [2020]({{ "results/hrodna/2020" | relative_url }})
 * [2019]({{ "results/hrodna/2019" | relative_url }})
+* [2017]({{ "results/hrodna/2017" | relative_url }})
 
 ## Минская областная олимпиада
 
