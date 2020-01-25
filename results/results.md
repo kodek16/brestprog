@@ -42,3 +42,4 @@ permalink: results/
 * [2020, Минск]({{ "results/minsk-horad/2020" | relative_url }})
 * [2017, Минск]({{ "results/minsk-horad/2017" | relative_url }})
 * [2016, Минск]({{ "results/minsk-horad/2016" | relative_url }})
+* [2015, Минск]({{ "results/minsk-horad/2015" | relative_url }})
