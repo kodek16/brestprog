@@ -25,26 +25,28 @@ layout: default
 
 <hr class="section-break" />
 
-<table class="results-table">
-  <tr>
-    <th>Год</th>
-    <th>Школа</th>
-    <th>Класс</th>
-    <th>Областной этап</th>
-  </tr>
-
-  {% for kv in page.participant.results.regionals %}
-    {% assign year = kv[0] %}
-    {% assign entry = kv[1] %}
+<div class="scrollable-x">
+  <table class="results-table">
     <tr>
-      <td>{{ year }}</td>
-      <td>{{ entry.school.name.ru }}</td>
-      <td>
-        {% include grade_text.html result=entry %}
-      </td>
-      <td>
-        {% include contest_result.html result=entry long=true %}
-      </td>
+      <th>Год</th>
+      <th>Школа</th>
+      <th>Класс</th>
+      <th>Областной этап</th>
     </tr>
-  {% endfor %}
-</table>
+
+    {% for kv in page.participant.results.regionals %}
+      {% assign year = kv[0] %}
+      {% assign entry = kv[1] %}
+      <tr>
+        <td>{{ year }}</td>
+        <td>{{ entry.school.name.ru }}</td>
+        <td>
+          {% include grade_text.html result=entry %}
+        </td>
+        <td>
+          {% include contest_result.html result=entry long=true %}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>

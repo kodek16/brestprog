@@ -28,6 +28,10 @@ blockquote {
   font-style: normal;
 }
 
+.scrollable-x {
+  overflow-x: auto;
+}
+
 .footer-col-1 {
   width: -webkit-calc(40% - (#{$spacing-unit} / 2));
   width:         calc(40% - (#{$spacing-unit} / 2));
