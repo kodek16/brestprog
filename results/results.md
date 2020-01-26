@@ -32,9 +32,9 @@ permalink: results/
 
 ## Гродно, областная олимпиада
 
-* [2020]({{ "results/hrodna/2020" | relative_url }})
-* [2019]({{ "results/hrodna/2019" | relative_url }})
-* [2017]({{ "results/hrodna/2017" | relative_url }})
+* [2020, Гродно]({{ "results/hrodna/2020" | relative_url }})
+* [2019, Гродно]({{ "results/hrodna/2019" | relative_url }})
+* [2017, Гродно]({{ "results/hrodna/2017" | relative_url }})
 
 ## Минская областная олимпиада
 
