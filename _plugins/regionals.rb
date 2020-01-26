@@ -103,7 +103,8 @@ module Brestprog
     }
 
     INCOMPLETE_RESULTS = [
-      ['viciebsk', 2018]
+      ['viciebsk', 2016],
+      ['viciebsk', 2015],
     ]
 
     def initialize(site, base, region, year)

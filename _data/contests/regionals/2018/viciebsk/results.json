@@ -583,10 +583,120 @@
     "rank": 59,
     "award": "",
     "qualified": false,
+    "participant": 679,
+    "school": 124,
+    "grade": 7,
+    "college": false,
+    "total": 15200
+  },
+  {
+    "rank": 60,
+    "award": "",
+    "qualified": false,
     "participant": 387,
     "school": 156,
     "grade": 9,
     "college": false,
     "total": 15200
+  },
+  {
+    "rank": 61,
+    "award": "",
+    "qualified": false,
+    "participant": 317,
+    "school": 127,
+    "grade": 8,
+    "college": false,
+    "total": 14000
+  },
+  {
+    "rank": 62,
+    "award": "",
+    "qualified": false,
+    "participant": 427,
+    "school": 124,
+    "grade": 10,
+    "college": false,
+    "total": 12041
+  },
+  {
+    "rank": 63,
+    "award": "",
+    "qualified": false,
+    "participant": 702,
+    "school": 285,
+    "grade": 11,
+    "college": false,
+    "total": 11600
+  },
+  {
+    "rank": 64,
+    "award": "",
+    "qualified": false,
+    "participant": 703,
+    "school": 167,
+    "grade": 9,
+    "college": false,
+    "total": 10200
+  },
+  {
+    "rank": 65,
+    "award": "",
+    "qualified": false,
+    "participant": 704,
+    "school": 286,
+    "grade": 9,
+    "college": false,
+    "total": 9084
+  },
+  {
+    "rank": 66,
+    "award": "",
+    "qualified": false,
+    "participant": 418,
+    "school": 139,
+    "grade": 9,
+    "college": false,
+    "total": 7800
+  },
+  {
+    "rank": 67,
+    "award": "",
+    "qualified": false,
+    "participant": 399,
+    "school": 136,
+    "grade": 8,
+    "college": false,
+    "total": 7680
+  },
+  {
+    "rank": 68,
+    "award": "",
+    "qualified": false,
+    "participant": 705,
+    "school": 141,
+    "grade": 10,
+    "college": false,
+    "total": 6000
+  },
+  {
+    "rank": 69,
+    "award": "",
+    "qualified": false,
+    "participant": 405,
+    "school": 160,
+    "grade": 9,
+    "college": false,
+    "total": 3200
+  },
+  {
+    "rank": 70,
+    "award": "",
+    "qualified": false,
+    "participant": 706,
+    "school": 287,
+    "grade": 9,
+    "college": false,
+    "total": 287
   }
 ]
