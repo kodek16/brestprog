@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+{% assign school = page.school %}
+
+<h1 class="entity-name">
+  {{ school.name.ru }}
+</h1>
+
+<h2 class="entity-subtitle">
+  {% include region_name.html region=school.region %}
+</h1>
+
+<hr class="section-break" />
+
+{% for kv in school.results.regionals %}
+  {% assign year = kv[0] %}
+  {% assign entries = kv[1] %}
+
+  <h3>{{ year }}</h3>
+
+  <div class="scrollable-x">
+    <table class="results-table">
+      <tr>
+        <th>Участник</th>
+        <th>Класс</th>
+        <th>Областной этап</th>
+      </tr>
+
+      {% for entry in entries %}
+        {% assign participant = page.participants[entry.participant] %}
+        <tr>
+          <td>
+            <a href='{{ "/participants/" | append: participant.id | relative_url }}'
+               class="entity-link">
+              {{ participant.name.ru.first }} {{ participant.name.ru.last }}
+            </a>
+          </td>
+          <td>{% include grade_text.html result=entry %}</td>
+          <td>{% include contest_result.html result=entry long=true %}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+{% endfor %}

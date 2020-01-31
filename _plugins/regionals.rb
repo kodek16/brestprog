@@ -5,24 +5,18 @@ module Brestprog
       site.data['dynamic']['participants'] = ParticipantsData.new(site)
       site.data['dynamic']['schools'] = SchoolsData.new(site)
 
-      populate_schools(site)
-
       site.data['contests']['regionals'].each do |year, results|
         results.each_key do |region|
           site.pages << RegionalsResultsPage.new(site, site.source, region, year)
         end
       end
 
-      site.data['dynamic']['participants'].all.each_key do |id|
-        site.pages << ParticipantProfilePage.new(site, site.source, id)
-      end
-    end
-
-    def populate_schools(site)
       site.data['dynamic']['participants'].all.each_value do |participant|
-        participant['results']['regionals'].each_value do |entry|
-          entry['school'] = site.data['dynamic']['schools'][entry['school']]
-        end
+        site.pages << ParticipantProfilePage.new(site, site.source, participant)
+      end
+
+      site.data['dynamic']['schools'].all.each_value do |school|
+        site.pages << SchoolProfilePage.new(site, site.source, school)
       end
     end
   end
@@ -30,8 +24,8 @@ module Brestprog
   module EntityCollection
     def all
       unless defined?(@all)
-        @all = @site.data[@collection].each_with_object({}) do |(_, participant), acc|
-          acc[participant['id']] = participant
+        @all = @site.data[@collection].each_with_object({}) do |(_, entity), acc|
+          acc[entity['id']] = entity
         end
       end
       @all
@@ -52,9 +46,7 @@ module Brestprog
       site.data['contests']['regionals'].each do |year, all_results|
         all_results.each do |region, results|
           results['results'].each do |entry|
-            participant_id = entry['participant']
-            participant = self[participant_id]
-
+            participant = self[entry['participant']]
             participant['results'] ||= {}
             participant['results']['regionals'] ||= {}
             participant['results']['regionals'][year] = entry
@@ -75,6 +67,27 @@ module Brestprog
     def initialize(site)
       @site = site
       @collection = 'schools'
+
+      site.data['contests']['regionals'].each do |year, all_results|
+        all_results.each do |region, results|
+          results['results'].each do |entry|
+            school = self[entry['school']]
+            school['results'] ||= {}
+            school['results']['regionals'] ||= {}
+            school['results']['regionals'][year] ||= []
+            school['results']['regionals'][year].push(entry)
+          end
+        end
+      end
+
+      all.each_value do |school|
+        if not school.has_key? 'results'
+          puts(school['name'])
+        end
+
+        school['results']['regionals'] = (
+          school['results']['regionals'].sort.reverse!.to_h)
+      end
     end
   end
 
@@ -116,6 +129,9 @@ module Brestprog
 
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'results_page.html')
+
+      self.data['schools'] = self.schools.all
+
       self.data['wide'] = has_task_breakup
       self.data['title'] = "#{REGION_CONTEST_NAMES[region]}, #{year}"
       self.data['results'] = results
@@ -134,7 +150,7 @@ module Brestprog
           'grade' => entry['grade'],
           'college' => entry['college'],
           'participant' => participants[entry['participant']],
-          'school' => entry['school'],
+          'school' => schools[entry['school']],
           'tasks' => (entry['tasks'].map(&method(:format_score)) if entry['tasks']),
           'total' => format_score(entry['total']),
         }.compact
@@ -153,16 +169,16 @@ module Brestprog
   class ParticipantProfilePage < Jekyll::Page
     include DynamicDataPage
 
-    def initialize(site, base, participant_id)
+    def initialize(site, base, participant)
       @site = site
       @base = base
       @dir = "participants"
-      @name = "#{participant_id}.html"
+      @name = "#{participant['id']}.html"
 
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'participant_profile.html')
 
-      participant = participants[participant_id]
+      self.data['schools'] = self.schools.all
       self.data['participant'] = participant
 
       reg_results = participant['results']['regionals']
@@ -172,6 +188,23 @@ module Brestprog
 
       most_recent_school = reg_results.first[1]['school']
       self.data['school'] = most_recent_school
+    end
+  end
+
+  class SchoolProfilePage < Jekyll::Page
+    include DynamicDataPage
+
+    def initialize(site, base, school)
+      @site = site
+      @base = base
+      @dir = "schools"
+      @name = "#{school['id']}.html"
+
+      self.process(@name)
+      self.read_yaml(File.join(base, '_layouts'), 'school_profile.html')
+
+      self.data['participants'] = self.participants.all
+      self.data['school'] = school
     end
   end
 end

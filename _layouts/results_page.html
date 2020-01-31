@@ -32,7 +32,12 @@ layout: page
             {{ entry.participant.name.ru.first }} {{ entry.participant.name.ru.last }}
           </a>
         </td>
-        <td>{{ entry.school.name.ru }}</td>
+        <td>
+          <a href='{{ "/schools/" | append: entry.school.id | relative_url }}'
+             class="entity-link">
+            {{ entry.school.name.ru }}
+          </a>
+        </td>
         <td>{{ entry.grade }} {% if entry.college %}курс{% endif %}</td>
         {% if page.has_task_breakup %}
           <td>{{ entry.tasks[0] }}</td>

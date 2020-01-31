@@ -104,5 +104,20 @@ img.region-symbol {
   margin-right: 5px;
 };
 
+h1.entity-name {
+  font-size: 64px;
+  letter-spacing: -1px;
+}
+
+h2.entity-subtitle {
+  font-size: 32px;
+  letter-spacing: -1px;
+}
+
+.section-break {
+  color: lightgray;
+  margin: 20px 0px;
+}
+
 @import "results_page";
 @import "participant_profile";

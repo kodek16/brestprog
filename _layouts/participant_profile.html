@@ -4,12 +4,16 @@ layout: default
 
 {% assign name = page.participant.name.ru %}
 
-<h1 class="participant-name">
+<h1 class="entity-name">
   {{ name.first }} {{ name.last }}
 </h1>
 
-<h1 class="current-school">
-  {% include school_name.html school=page.school %}
+<h2 class="entity-subtitle">
+  {% assign current_school = page.schools[page.school] %}
+  <a href='{{ "/schools/" | append: current_school.id | relative_url }}'
+     class="entity-link">
+    {% include school_name.html school=current_school %}
+  </a>
 </h1>
 
 <hr class="section-break" />
@@ -37,9 +41,15 @@ layout: default
     {% for kv in page.participant.results.regionals %}
       {% assign year = kv[0] %}
       {% assign entry = kv[1] %}
+      {% assign school = page.schools[entry.school] %}
       <tr>
         <td>{{ year }}</td>
-        <td>{{ entry.school.name.ru }}</td>
+        <td>
+          <a href='{{ "/schools/" | append: school.id | relative_url }}'
+             class="entity-link">
+            {{ school.name.ru }}
+          </a>
+        </td>
         <td>
           {% include grade_text.html result=entry %}
         </td>
