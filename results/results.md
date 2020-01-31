@@ -30,6 +30,7 @@ permalink: results/
 * [2018, Витебск]({{ "results/viciebsk/2018" | relative_url }})
 * [2017, Витебск]({{ "results/viciebsk/2017" | relative_url }})
 * [2016, Витебск]({{ "results/viciebsk/2016" | relative_url }})
+* [2015, Витебск]({{ "results/viciebsk/2015" | relative_url }})
 
 ## Гродно, областная олимпиада
 

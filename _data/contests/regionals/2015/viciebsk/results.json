@@ -1,0 +1,732 @@
+[
+  {
+    "rank": 1,
+    "award": "gold",
+    "qualified": true,
+    "participant": 769,
+    "school": 120,
+    "grade": 10,
+    "college": false,
+    "total": 80000
+  },
+  {
+    "rank": 2,
+    "award": "gold",
+    "qualified": true,
+    "participant": 800,
+    "school": 122,
+    "grade": 11,
+    "college": false,
+    "total": 76500
+  },
+  {
+    "rank": 3,
+    "award": "gold",
+    "qualified": true,
+    "participant": 768,
+    "school": 122,
+    "grade": 10,
+    "college": false,
+    "total": 73500
+  },
+  {
+    "rank": 4,
+    "award": "gold",
+    "qualified": true,
+    "participant": 292,
+    "school": 120,
+    "grade": 9,
+    "college": false,
+    "total": 72500
+  },
+  {
+    "rank": 5,
+    "award": "gold",
+    "qualified": true,
+    "participant": 801,
+    "school": 120,
+    "grade": 11,
+    "college": false,
+    "total": 63000
+  },
+  {
+    "rank": 6,
+    "award": "gold",
+    "qualified": true,
+    "participant": 770,
+    "school": 120,
+    "grade": 10,
+    "college": false,
+    "total": 63000
+  },
+  {
+    "rank": 7,
+    "award": "silver",
+    "qualified": true,
+    "participant": 802,
+    "school": 136,
+    "grade": 11,
+    "college": false,
+    "total": 62000
+  },
+  {
+    "rank": 8,
+    "award": "silver",
+    "qualified": true,
+    "participant": 803,
+    "school": 123,
+    "grade": 11,
+    "college": false,
+    "total": 59601
+  },
+  {
+    "rank": 9,
+    "award": "silver",
+    "qualified": true,
+    "participant": 804,
+    "school": 127,
+    "grade": 11,
+    "college": false,
+    "total": 48500
+  },
+  {
+    "rank": 10,
+    "award": "silver",
+    "qualified": true,
+    "participant": 805,
+    "school": 120,
+    "grade": 11,
+    "college": false,
+    "total": 48000
+  },
+  {
+    "rank": 11,
+    "award": "silver",
+    "qualified": true,
+    "participant": 306,
+    "school": 122,
+    "grade": 9,
+    "college": false,
+    "total": 47655
+  },
+  {
+    "rank": 12,
+    "award": "silver",
+    "qualified": true,
+    "participant": 299,
+    "school": 161,
+    "grade": 9,
+    "college": false,
+    "total": 46500
+  },
+  {
+    "rank": 13,
+    "award": "silver",
+    "qualified": true,
+    "participant": 303,
+    "school": 120,
+    "grade": 9,
+    "college": false,
+    "total": 43822
+  },
+  {
+    "rank": 14,
+    "award": "silver",
+    "qualified": true,
+    "participant": 294,
+    "school": 148,
+    "grade": 9,
+    "college": false,
+    "total": 43686
+  },
+  {
+    "rank": 15,
+    "award": "silver",
+    "qualified": true,
+    "participant": 302,
+    "school": 161,
+    "grade": 9,
+    "college": false,
+    "total": 43000
+  },
+  {
+    "rank": 16,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 772,
+    "school": 134,
+    "grade": 10,
+    "college": false,
+    "total": 41646
+  },
+  {
+    "rank": 17,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 775,
+    "school": 130,
+    "grade": 10,
+    "college": false,
+    "total": 40607
+  },
+  {
+    "rank": 18,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 297,
+    "school": 122,
+    "grade": 8,
+    "college": false,
+    "total": 40000
+  },
+  {
+    "rank": 19,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 797,
+    "school": 123,
+    "grade": 10,
+    "college": false,
+    "total": 39607
+  },
+  {
+    "rank": 20,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 806,
+    "school": 140,
+    "grade": 11,
+    "college": false,
+    "total": 39500
+  },
+  {
+    "rank": 21,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 783,
+    "school": 147,
+    "grade": 10,
+    "college": false,
+    "total": 39500
+  },
+  {
+    "rank": 22,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 304,
+    "school": 122,
+    "grade": 9,
+    "college": false,
+    "total": 39000
+  },
+  {
+    "rank": 23,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 771,
+    "school": 126,
+    "grade": 10,
+    "college": false,
+    "total": 38500
+  },
+  {
+    "rank": 24,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 309,
+    "school": 122,
+    "grade": 9,
+    "college": false,
+    "total": 38391
+  },
+  {
+    "rank": 25,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 784,
+    "school": 308,
+    "grade": 10,
+    "college": false,
+    "total": 38000
+  },
+  {
+    "rank": 26,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 296,
+    "school": 120,
+    "grade": 9,
+    "college": false,
+    "total": 36520
+  },
+  {
+    "rank": 27,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 305,
+    "school": 120,
+    "grade": 8,
+    "college": false,
+    "total": 36000
+  },
+  {
+    "rank": 28,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 339,
+    "school": 134,
+    "grade": 9,
+    "college": false,
+    "total": 34457
+  },
+  {
+    "rank": 29,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 326,
+    "school": 125,
+    "grade": 9,
+    "college": false,
+    "total": 32607
+  },
+  {
+    "rank": 30,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 773,
+    "school": 127,
+    "grade": 10,
+    "college": false,
+    "total": 32500
+  },
+  {
+    "rank": 31,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 301,
+    "school": 122,
+    "grade": 9,
+    "college": false,
+    "total": 32084
+  },
+  {
+    "rank": 32,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 807,
+    "school": 147,
+    "grade": 10,
+    "college": false,
+    "total": 32000
+  },
+  {
+    "rank": 33,
+    "award": "bronze",
+    "qualified": false,
+    "participant": 293,
+    "school": 121,
+    "grade": 9,
+    "college": false,
+    "total": 31898
+  },
+  {
+    "rank": 34,
+    "award": "",
+    "qualified": false,
+    "participant": 778,
+    "school": 123,
+    "grade": 10,
+    "college": false,
+    "total": 31199
+  },
+  {
+    "rank": 35,
+    "award": "",
+    "qualified": false,
+    "participant": 808,
+    "school": 286,
+    "grade": 11,
+    "college": false,
+    "total": 31147
+  },
+  {
+    "rank": 36,
+    "award": "",
+    "qualified": false,
+    "participant": 307,
+    "school": 122,
+    "grade": 9,
+    "college": false,
+    "total": 31088
+  },
+  {
+    "rank": 37,
+    "award": "",
+    "qualified": false,
+    "participant": 312,
+    "school": 122,
+    "grade": 9,
+    "college": false,
+    "total": 30769
+  },
+  {
+    "rank": 38,
+    "award": "",
+    "qualified": false,
+    "participant": 310,
+    "school": 125,
+    "grade": 9,
+    "college": false,
+    "total": 30479
+  },
+  {
+    "rank": 39,
+    "award": "",
+    "qualified": false,
+    "participant": 809,
+    "school": 123,
+    "grade": 11,
+    "college": false,
+    "total": 30000
+  },
+  {
+    "rank": 40,
+    "award": "",
+    "qualified": false,
+    "participant": 810,
+    "school": 122,
+    "grade": 11,
+    "college": false,
+    "total": 29500
+  },
+  {
+    "rank": 41,
+    "award": "",
+    "qualified": false,
+    "participant": 811,
+    "school": 318,
+    "grade": 10,
+    "college": false,
+    "total": 29500
+  },
+  {
+    "rank": 42,
+    "award": "",
+    "qualified": false,
+    "participant": 812,
+    "school": 319,
+    "grade": 10,
+    "college": false,
+    "total": 28500
+  },
+  {
+    "rank": 43,
+    "award": "",
+    "qualified": false,
+    "participant": 331,
+    "school": 131,
+    "grade": 9,
+    "college": false,
+    "total": 28500
+  },
+  {
+    "rank": 44,
+    "award": "",
+    "qualified": false,
+    "participant": 813,
+    "school": 315,
+    "grade": 11,
+    "college": false,
+    "total": 27000
+  },
+  {
+    "rank": 45,
+    "award": "",
+    "qualified": false,
+    "participant": 298,
+    "school": 122,
+    "grade": 9,
+    "college": false,
+    "total": 26944
+  },
+  {
+    "rank": 46,
+    "award": "",
+    "qualified": false,
+    "participant": 814,
+    "school": 147,
+    "grade": 11,
+    "college": false,
+    "total": 26407
+  },
+  {
+    "rank": 47,
+    "award": "",
+    "qualified": false,
+    "participant": 815,
+    "school": 125,
+    "grade": 11,
+    "college": false,
+    "total": 26000
+  },
+  {
+    "rank": 48,
+    "award": "",
+    "qualified": false,
+    "participant": 816,
+    "school": 139,
+    "grade": 11,
+    "college": false,
+    "total": 26000
+  },
+  {
+    "rank": 49,
+    "award": "",
+    "qualified": false,
+    "participant": 795,
+    "school": 315,
+    "grade": 10,
+    "college": false,
+    "total": 24479
+  },
+  {
+    "rank": 50,
+    "award": "",
+    "qualified": false,
+    "participant": 817,
+    "school": 315,
+    "grade": 10,
+    "college": false,
+    "total": 24000
+  },
+  {
+    "rank": 51,
+    "award": "",
+    "qualified": false,
+    "participant": 818,
+    "school": 126,
+    "grade": 11,
+    "college": false,
+    "total": 23000
+  },
+  {
+    "rank": 52,
+    "award": "",
+    "qualified": false,
+    "participant": 819,
+    "school": 147,
+    "grade": 10,
+    "college": false,
+    "total": 23000
+  },
+  {
+    "rank": 53,
+    "award": "",
+    "qualified": false,
+    "participant": 295,
+    "school": 122,
+    "grade": 8,
+    "college": false,
+    "total": 22953
+  },
+  {
+    "rank": 54,
+    "award": "",
+    "qualified": false,
+    "participant": 789,
+    "school": 125,
+    "grade": 10,
+    "college": false,
+    "total": 22000
+  },
+  {
+    "rank": 55,
+    "award": "",
+    "qualified": false,
+    "participant": 820,
+    "school": 130,
+    "grade": 11,
+    "college": false,
+    "total": 21681
+  },
+  {
+    "rank": 56,
+    "award": "",
+    "qualified": false,
+    "participant": 821,
+    "school": 134,
+    "grade": 10,
+    "college": false,
+    "total": 20500
+  },
+  {
+    "rank": 57,
+    "award": "",
+    "qualified": false,
+    "participant": 796,
+    "school": 141,
+    "grade": 10,
+    "college": false,
+    "total": 20000
+  },
+  {
+    "rank": 58,
+    "award": "",
+    "qualified": false,
+    "participant": 785,
+    "school": 312,
+    "grade": 9,
+    "college": false,
+    "total": 20000
+  },
+  {
+    "rank": 59,
+    "award": "",
+    "qualified": false,
+    "participant": 780,
+    "school": 307,
+    "grade": 10,
+    "college": false,
+    "total": 18829
+  },
+  {
+    "rank": 60,
+    "award": "",
+    "qualified": false,
+    "participant": 332,
+    "school": 127,
+    "grade": 9,
+    "college": false,
+    "total": 18000
+  },
+  {
+    "rank": 61,
+    "award": "",
+    "qualified": false,
+    "participant": 822,
+    "school": 152,
+    "grade": 10,
+    "college": false,
+    "total": 18000
+  },
+  {
+    "rank": 62,
+    "award": "",
+    "qualified": false,
+    "participant": 823,
+    "school": 129,
+    "grade": 9,
+    "college": false,
+    "total": 17113
+  },
+  {
+    "rank": 63,
+    "award": "",
+    "qualified": false,
+    "participant": 794,
+    "school": 314,
+    "grade": 10,
+    "college": false,
+    "total": 16500
+  },
+  {
+    "rank": 64,
+    "award": "",
+    "qualified": false,
+    "participant": 325,
+    "school": 130,
+    "grade": 9,
+    "college": false,
+    "total": 16000
+  },
+  {
+    "rank": 65,
+    "award": "",
+    "qualified": false,
+    "participant": 824,
+    "school": 320,
+    "grade": 10,
+    "college": false,
+    "total": 16000
+  },
+  {
+    "rank": 66,
+    "award": "",
+    "qualified": false,
+    "participant": 825,
+    "school": 147,
+    "grade": 10,
+    "college": false,
+    "total": 14000
+  },
+  {
+    "rank": 67,
+    "award": "",
+    "qualified": false,
+    "participant": 826,
+    "school": 321,
+    "grade": 9,
+    "college": false,
+    "total": 12216
+  },
+  {
+    "rank": 68,
+    "award": "",
+    "qualified": false,
+    "participant": 827,
+    "school": 322,
+    "grade": 9,
+    "college": false,
+    "total": 9000
+  },
+  {
+    "rank": 69,
+    "award": "",
+    "qualified": false,
+    "participant": 828,
+    "school": 323,
+    "grade": 9,
+    "college": false,
+    "total": 8500
+  },
+  {
+    "rank": 70,
+    "award": "",
+    "qualified": false,
+    "participant": 829,
+    "school": 135,
+    "grade": 10,
+    "college": false,
+    "total": 6500
+  },
+  {
+    "rank": 71,
+    "award": "",
+    "qualified": false,
+    "participant": 793,
+    "school": 313,
+    "grade": 10,
+    "college": false,
+    "total": 4500
+  },
+  {
+    "rank": 72,
+    "award": "",
+    "qualified": false,
+    "participant": 779,
+    "school": 283,
+    "grade": 9,
+    "college": false,
+    "total": 1000
+  },
+  {
+    "rank": 73,
+    "award": "",
+    "qualified": false,
+    "participant": 830,
+    "school": 323,
+    "grade": 9,
+    "college": false,
+    "total": 500
+  }
+]
