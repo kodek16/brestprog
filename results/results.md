@@ -35,6 +35,7 @@ permalink: results/
 ## Гомель, областная олимпиада
 
 * [2020, Гомель]({{ "results/homiel/2020" | relative_url }})
+* [2019, Гомель]({{ "results/homiel/2019" | relative_url }})
 
 ## Гродно, областная олимпиада
 
