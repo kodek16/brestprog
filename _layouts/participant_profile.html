@@ -54,7 +54,10 @@ layout: default
           {% include grade_text.html result=entry %}
         </td>
         <td>
-          {% include contest_result.html result=entry long=true %}
+          <a href='{{ "/results/" | append: entry.region | append: "/" | append: year | relative_url }}'
+             class="entity-link">
+            {% include contest_result.html result=entry long=true %}
+          </a>
         </td>
       </tr>
     {% endfor %}

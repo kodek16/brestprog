@@ -50,6 +50,7 @@ module Brestprog
             participant['results'] ||= {}
             participant['results']['regionals'] ||= {}
             participant['results']['regionals'][year] = entry
+            participant['results']['regionals'][year]['region'] = region
           end
         end
       end
