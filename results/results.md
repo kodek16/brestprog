@@ -32,6 +32,10 @@ permalink: results/
 * [2016, Витебск]({{ "results/viciebsk/2016" | relative_url }})
 * [2015, Витебск]({{ "results/viciebsk/2015" | relative_url }})
 
+## Гомель, областная олимпиада
+
+* [2020, Гомель]({{ "results/homiel/2020" | relative_url }})
+
 ## Гродно, областная олимпиада
 
 * [2020, Гродно]({{ "results/hrodna/2020" | relative_url }})
