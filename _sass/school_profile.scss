@@ -1,0 +1,15 @@
+a.year-tab {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+@media (hover: none) {
+  .mdl-tabs__tab-bar.scrollable-x {
+    justify-content: unset;
+    padding-bottom: 20px;
+  }
+
+  a.mdl-tabs__tab.year-tab {
+    flex-shrink: 0;
+  }
+}

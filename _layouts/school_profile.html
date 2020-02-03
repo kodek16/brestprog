@@ -1,5 +1,6 @@
 ---
 layout: default
+mdl_enabled: true
 ---
 
 {% assign school = page.school %}
@@ -14,33 +15,46 @@ layout: default
 
 <hr class="section-break" />
 
-{% for kv in school.results.regionals %}
-  {% assign year = kv[0] %}
-  {% assign entries = kv[1] %}
-
-  <h3>{{ year }}</h3>
-
-  <div class="scrollable-x">
-    <table class="results-table">
-      <tr>
-        <th>Участник</th>
-        <th>Класс</th>
-        <th>Областной этап</th>
-      </tr>
-
-      {% for entry in entries %}
-        {% assign participant = page.participants[entry.participant] %}
-        <tr>
-          <td>
-            <a href='{{ "/participants/" | append: participant.id | relative_url }}'
-               class="entity-link">
-              {{ participant.name.ru.first }} {{ participant.name.ru.last }}
-            </a>
-          </td>
-          <td>{% include grade_text.html result=entry %}</td>
-          <td>{% include contest_result.html result=entry long=true %}</td>
-        </tr>
-      {% endfor %}
-    </table>
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+  <div class="mdl-tabs__tab-bar scrollable-x">
+    {% for kv in school.results.regionals %}
+      {% assign year = kv[0] %}
+      <a href='#results-{{ year }}'
+         class='mdl-tabs__tab year-tab {% if forloop.first %} is-active {% endif %}'>
+        {{ year }}
+      </a>
+    {% endfor %}
   </div>
-{% endfor %}
+
+  {% for kv in school.results.regionals %}
+    {% assign year = kv[0] %}
+    {% assign entries = kv[1] %}
+
+    <div class='mdl-tabs__panel {% if forloop.first %} is-active {% endif %}'
+         id='results-{{ year }}'>
+      <div class="scrollable-x">
+        <table class="results-table">
+          <tr>
+            <th>Участник</th>
+            <th>Класс</th>
+            <th>Областной этап</th>
+          </tr>
+
+          {% for entry in entries %}
+            {% assign participant = page.participants[entry.participant] %}
+            <tr>
+              <td>
+                <a href='{{ "/participants/" | append: participant.id | relative_url }}'
+                   class="entity-link">
+                  {{ participant.name.ru.first }} {{ participant.name.ru.last }}
+                </a>
+              </td>
+              <td>{% include grade_text.html result=entry %}</td>
+              <td>{% include contest_result.html result=entry long=true %}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  {% endfor %}
+</div>

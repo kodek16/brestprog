@@ -5,7 +5,7 @@ $wide-content-width: 1360px;
 
 @import "{{ site.theme }}";
 
-body {
+html > body {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -105,19 +105,24 @@ img.region-symbol {
 };
 
 h1.entity-name {
-  font-size: 64px;
+  font-size: 52px;
   letter-spacing: -1px;
 }
 
 h2.entity-subtitle {
-  font-size: 32px;
+  font-size: 26px;
   letter-spacing: -1px;
 }
 
 .section-break {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
   color: lightgray;
   margin: 20px 0px;
 }
 
 @import "results_page";
 @import "participant_profile";
+@import "school_profile";
