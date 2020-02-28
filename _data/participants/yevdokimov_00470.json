@@ -3,10 +3,9 @@
   "name": {
     "ru": {
       "first": "Роман",
-      "patronymic": "-",
+      "patronymic": "Денисович",
       "last": "Евдокимов"
     }
   },
-  "graduation": 2017,
-  "distinguisher": "evdokimov"
+  "graduation": 2017
 }
