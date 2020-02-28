@@ -1,38 +1,55 @@
 {% assign region = include.region %}
+{% assign no_emblem = include.no_emblem %}
 
 <span>
-  {% case school.region %}
+  {% case region %}
   {% when 'Brest' %}
+    {% unless no_emblem %}
     <img src='{{ "/assets/symbols/brest.svg" | relative_url }}'
          class='region-symbol' />
+    {% endunless %}
     Брестская область
   {% when 'Viciebsk' %}
+    {% unless no_emblem %}
     <img src='{{ "/assets/symbols/viciebsk.svg" | relative_url }}'
          class='region-symbol' />
+    {% endunless %}
     Витебская область
   {% when 'Homieĺ' %}
+    {% unless no_emblem %}
     <img src='{{ "/assets/symbols/homiel.svg" | relative_url }}'
          class='region-symbol' />
+    {% endunless %}
     Гомельская область
   {% when 'Hrodna' %}
+    {% unless no_emblem %}
     <img src='{{ "/assets/symbols/hrodna.svg" | relative_url }}'
          class='region-symbol' />
+    {% endunless %}
     Гродненская область
   {% when 'Minsk-Voblaść' %}
+    {% unless no_emblem %}
     <img src='{{ "/assets/symbols/minsk-voblasc.svg" | relative_url }}'
          class='region-symbol' />
+    {% endunless %}
     Минская область
   {% when 'Mahilioŭ' %}
+    {% unless no_emblem %}
     <img src='{{ "/assets/symbols/mahiliou.svg" | relative_url }}'
          class='region-symbol' />
+    {% endunless %}
     Могилёвская область
   {% when 'Minsk-Horad' %}
+    {% unless no_emblem %}
     <img src='{{ "/assets/symbols/minsk-horad.svg" | relative_url }}'
          class='region-symbol' />
+    {% endunless %}
     г. Минск
   {% when 'Licej-BDU' %}
+    {% unless no_emblem %}
     <img src='{{ "/assets/symbols/licej-bdu.png.svg" | relative_url }}'
          class='region-symbol' />
+    {% endunless %}
     Лицей БГУ
   {% endcase %}
 </span>

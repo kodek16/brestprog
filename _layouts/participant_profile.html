@@ -8,24 +8,39 @@ layout: default
   {{ name.first }} {{ name.last }}
 </h1>
 
-<h2 class="entity-subtitle">
-  {% assign current_school = page.schools[page.school] %}
-  <a href='{{ "/schools/" | append: current_school.id | relative_url }}'
-     class="entity-link">
-    {% include school_name.html school=current_school %}
-  </a>
-</h1>
+{% if page.school %}
+  <h2 class="entity-subtitle">
+    {% assign current_school = page.schools[page.school] %}
+    <a href='{{ "/schools/" | append: current_school.id | relative_url }}'
+       class="entity-link">
+      {% include school_name.html school=current_school %}
+    </a>
+  </h2>
+{% endif %}
 
 <hr class="section-break" />
 
-{% assign best_year_regionals = page.best_result_regionals[0] %}
-{% assign best_result_regionals = page.best_result_regionals[1] %}
+{% if page.best_result_nationals %}
+  {% assign best_year_nationals = page.best_result_nationals[0] %}
+  {% assign best_result_nationals = page.best_result_nationals[1] %}
 
-<p class="best-result">
-Лучший результат в области:
-{% include contest_result.html result=best_result_regionals long=true %}
-({{ best_year_regionals }})
-</p>
+  <p class="best-result">
+  Лучший результат в республике:
+  {% include contest_result.html result=best_result_nationals long=true %}
+  ({{ best_year_nationals }})
+  </p>
+{% endif %}
+
+{% if page.best_result_regionals %}
+  {% assign best_year_regionals = page.best_result_regionals[0] %}
+  {% assign best_result_regionals = page.best_result_regionals[1] %}
+
+  <p class="best-result">
+  Лучший результат в области:
+  {% include contest_result.html result=best_result_regionals long=true %}
+  ({{ best_year_regionals }})
+  </p>
+{% endif %}
 
 <hr class="section-break" />
 
@@ -35,13 +50,19 @@ layout: default
       <th>Год</th>
       <th>Школа</th>
       <th>Класс</th>
-      <th>Областной этап</th>
+      {% if page.has_regional %}
+        <th>Областной этап</th>
+      {% endif %}
+      {% if page.has_national %}
+        <th>Республиканский этап</th>
+      {% endif %}
     </tr>
 
-    {% for kv in page.participant.results.regionals %}
+    {% for kv in page.results %}
       {% assign year = kv[0] %}
       {% assign entry = kv[1] %}
-      {% assign school = page.schools[entry.school] %}
+
+      {% assign school = page.schools[entry.regional.school] %}
       <tr>
         <td>{{ year }}</td>
         <td>
@@ -51,14 +72,32 @@ layout: default
           </a>
         </td>
         <td>
-          {% include grade_text.html result=entry %}
+          {% if entry.regional %}
+            {% include grade_text.html result=entry.regional %}
+          {% else %}
+            {% include grade_text.html result=entry.national %}
+          {% endif %}
         </td>
-        <td>
-          <a href='{{ "/results/" | append: entry.region | append: "/" | append: year | relative_url }}'
-             class="entity-link">
-            {% include contest_result.html result=entry long=true %}
-          </a>
-        </td>
+        {% if page.has_regional %}
+          <td>
+            {% if entry.regional %}
+              <a href='{{ "/results/" | append: entry.regional.region | append: "/" | append: year | relative_url }}'
+                 class="entity-link">
+                {% include contest_result.html result=entry.regional long=true %}
+              </a>
+            {% endif %}
+          </td>
+        {% endif %}
+        {% if page.has_national %}
+          <td>
+            {% if entry.national %}
+              <a href='{{ "/results/national" | append: "/" | append: year | relative_url }}'
+                 class="entity-link">
+                {% include contest_result.html result=entry.national long=true %}
+              </a>
+            {% endif %}
+          </td>
+        {% endif %}
       </tr>
     {% endfor %}
   </table>

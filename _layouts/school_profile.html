@@ -17,7 +17,7 @@ mdl_enabled: true
 
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
   <div class="mdl-tabs__tab-bar scrollable-x">
-    {% for kv in school.results.regionals %}
+    {% for kv in school.results %}
       {% assign year = kv[0] %}
       <a href='#results-{{ year }}'
          class='mdl-tabs__tab year-tab {% if forloop.first %} is-active {% endif %}'>
@@ -26,9 +26,9 @@ mdl_enabled: true
     {% endfor %}
   </div>
 
-  {% for kv in school.results.regionals %}
+  {% for kv in school.results %}
     {% assign year = kv[0] %}
-    {% assign entries = kv[1] %}
+    {% assign students = kv[1] %}
 
     <div class='mdl-tabs__panel {% if forloop.first %} is-active {% endif %}'
          id='results-{{ year }}'>
@@ -38,10 +38,15 @@ mdl_enabled: true
             <th>Участник</th>
             <th>Класс</th>
             <th>Областной этап</th>
+            <th>Республиканский этап</th>
           </tr>
 
-          {% for entry in entries %}
-            {% assign participant = page.participants[entry.participant] %}
+          {% for kv in students %}
+            {% assign participant_id = kv[0] %}
+            {% assign participant = page.participants[participant_id] %}
+            {% assign reg_result = kv[1].regional %}
+            {% assign nat_result = kv[1].national %}
+
             <tr>
               <td>
                 <a href='{{ "/participants/" | append: participant.id | relative_url }}'
@@ -49,8 +54,17 @@ mdl_enabled: true
                   {{ participant.name.ru.first }} {{ participant.name.ru.last }}
                 </a>
               </td>
-              <td>{% include grade_text.html result=entry %}</td>
-              <td>{% include contest_result.html result=entry long=true %}</td>
+              <td>{% include grade_text.html result=reg_result %}</td>
+              <td>
+                {% if reg_result %}
+                  {% include contest_result.html result=reg_result long=true %}
+                {% endif %}
+              </td>
+              <td>
+                {% if nat_result %}
+                  {% include contest_result.html result=nat_result long=true %}
+                {% endif %}
+              </td>
             </tr>
           {% endfor %}
         </table>

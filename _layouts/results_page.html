@@ -6,7 +6,14 @@ layout: page
     <tr>
       <th>Место</th>
       <th>Участник</th>
-      <th>Школа</th>
+      <th>
+        {% case page.level %}
+        {% when 'regional' %}
+          Школа
+        {% when 'national' %}
+          Команда
+        {% endcase %}
+      </th>
       <th>Класс</th>
       {% if page.has_task_breakup %}
         <th>1-1</th>
@@ -33,10 +40,15 @@ layout: page
           </a>
         </td>
         <td>
-          <a href='{{ "/schools/" | append: entry.school.id | relative_url }}'
-             class="entity-link">
-            {{ entry.school.name.ru }}
-          </a>
+          {% case page.level %}
+          {% when 'regional' %}
+            <a href='{{ "/schools/" | append: entry.school.id | relative_url }}'
+               class="entity-link">
+              {{ entry.school.name.ru }}
+            </a>
+          {% when 'national' %}
+            {% include region_name.html region=entry.region no_emblem=true %}
+          {% endcase %}
         </td>
         <td>{{ entry.grade }} {% if entry.college %}курс{% endif %}</td>
         {% if page.has_task_breakup %}

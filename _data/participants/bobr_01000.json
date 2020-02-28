@@ -1,0 +1,11 @@
+{
+  "id": 1000,
+  "name": {
+    "ru": {
+      "first": "Антон",
+      "patronymic": "-",
+      "last": "Бобр"
+    }
+  },
+  "graduation": 2015
+}
