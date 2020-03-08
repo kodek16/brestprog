@@ -9,6 +9,10 @@ html > body {
   font-family: 'Roboto', sans-serif;
 }
 
+p, ul {
+  font-size: 16px;
+}
+
 .wide-wrapper {
   max-width: -webkit-calc(#{$wide-content-width} - (30px * 2));
   max-width: calc(#{$wide-content-width} - (30px * 2));
@@ -85,6 +89,27 @@ table.rouge-table {
 
   td:last-child {
     width: 100%;
+  }
+}
+
+// Better-looking MDL tabs.
+.mdl-tabs__tab-bar {
+  margin-bottom: 15px;
+}
+
+a.mdl-tabs__tab {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+@media (hover: none) {
+  .mdl-tabs__tab-bar.scrollable-x {
+    justify-content: unset;
+    padding-bottom: 20px;
+  }
+
+  a.mdl-tabs__tab {
+    flex-shrink: 0;
   }
 }
 

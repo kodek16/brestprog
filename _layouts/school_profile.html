@@ -20,7 +20,7 @@ mdl_enabled: true
     {% for kv in school.results %}
       {% assign year = kv[0] %}
       <a href='#results-{{ year }}'
-         class='mdl-tabs__tab year-tab {% if forloop.first %} is-active {% endif %}'>
+         class='mdl-tabs__tab {% if forloop.first %} is-active {% endif %}'>
         {{ year }}
       </a>
     {% endfor %}
