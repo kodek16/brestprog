@@ -218,7 +218,6 @@ module Brestprog
     end
 
     def collect_results(site, year)
-      puts year
       site.data['contests']
       site.data['contests']['nationals']
       site.data['contests']['nationals'][year]
