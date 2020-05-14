@@ -10,11 +10,12 @@ permalink: results/
 
 ## Республиканская олимпиада
 
-* [2019, Пинск]({{ "results/national/2019" | relative_url }})
-* [2018, Минск]({{ "results/national/2018" | relative_url }})
-* [2017, Гродно]({{ "results/national/2017" | relative_url }})
-* [2016, Могилёв]({{ "results/national/2016" | relative_url }})
-* [2015, Могилёв]({{ "results/national/2015" | relative_url }})
+- [2020, Пинск]({{ "results/national/2020" | relative_url }}) (не учитывается в статистике из-за пандемии COVID-19)
+- [2019, Пинск]({{ "results/national/2019" | relative_url }})
+- [2018, Минск]({{ "results/national/2018" | relative_url }})
+- [2017, Гродно]({{ "results/national/2017" | relative_url }})
+- [2016, Могилёв]({{ "results/national/2016" | relative_url }})
+- [2015, Могилёв]({{ "results/national/2015" | relative_url }})
 
 ## Областные олимпиады
 

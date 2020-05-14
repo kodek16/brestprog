@@ -189,6 +189,7 @@ module Brestprog
           'award' => entry['award'],
           'grade' => entry['grade'],
           'college' => entry['college'],
+          'excluded_reason' => entry['excluded_reason'],
           'participant' => participants[entry['participant']],
           'school' => schools[entry['school']],
           'tasks' => (entry['tasks'].map(&method(:format_score)) if entry['tasks']),
@@ -199,6 +200,18 @@ module Brestprog
   end
 
   class NationalsResultsPage < ResultsPage
+    RESULT_NOTES = {
+      '2020' => "В 2020-м году из-за
+      <a href=\"https://en.wikipedia.org/wiki/COVID-19_pandemic\">пандемии COVID-19</a>
+      республиканский этап олимпиады проводился в чрезвычайных условиях.
+      Туры были пересены с конца марта на середину мая, участие было разрешено
+      только для учеников 11-го класса, некоторые из них всё же отказались от него из-за
+      опасений за своё здоровье.
+      В связи с этим, результаты за 2020-й год не учитываются в различных статистических
+      данных на brestprog из-за искажений, которые они бы внесли.
+      "
+    }
+
     def initialize(site, base, year)
       @site = site
       @base = base
@@ -215,6 +228,7 @@ module Brestprog
       self.data['level'] = 'national'
       self.data['results'] = results
       self.data['has_task_breakup'] = true
+      self.data['notes'] = RESULT_NOTES[year]
     end
 
     def collect_results(site, year)
@@ -231,6 +245,7 @@ module Brestprog
           'award' => entry['award'],
           'grade' => entry['grade'],
           'college' => entry['college'],
+          'excluded_reason' => entry['excluded_reason'],
           'participant' => participants[entry['participant']],
           'region' => entry['region'],
           'tasks' => entry['tasks'].map(&method(:format_score)),
@@ -257,7 +272,9 @@ module Brestprog
 
       reg_results = participant['results']['regionals']
       if not reg_results.nil?
-        best_result_regionals = reg_results.min_by { |_, x| x['rank'] }
+        best_result_regionals = reg_results
+          .filter { |_, x| !x['excluded_reason'] }
+          .min_by { |_, x| x['rank'] }
         most_recent_school = reg_results.first[1]['school']
       else
         best_result_regionals = nil
@@ -266,7 +283,9 @@ module Brestprog
 
       nat_results = participant['results']['nationals']
       if not nat_results.nil?
-        best_result_nationals = nat_results.min_by { |_, x| x['rank'] }
+        best_result_nationals = nat_results
+          .filter { |_, x| !x['excluded_reason'] }
+          .min_by { |_, x| x['rank'] }
       else
         best_result_nationals = nil
       end

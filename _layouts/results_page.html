@@ -67,6 +67,12 @@ layout: page
   </table>
 </div>
 
+{% if page.notes %}
+  <div class="help-needed-callout">
+    {{ page.notes }}
+  </div>
+{% endif %}
+
 {% if page.incomplete %}
   <div class="help-needed-callout">
     К сожалению, результаты остальных участников пока не удалось восстановить.
