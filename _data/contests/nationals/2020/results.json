@@ -1,0 +1,962 @@
+[
+  {
+    "rank": 1,
+    "award": "gold",
+    "qualified": true,
+    "participant": 313,
+    "region": "Viciebsk",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      10000,
+      8000,
+      10000,
+      10000,
+      5400,
+      8427
+    ],
+    "total": 71827
+  },
+  {
+    "rank": 2,
+    "award": "gold",
+    "qualified": true,
+    "participant": 255,
+    "region": "Licej-BDU",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      10000,
+      8000,
+      10000,
+      10000,
+      5400,
+      8305
+    ],
+    "total": 71705
+  },
+  {
+    "rank": 3,
+    "award": "gold",
+    "qualified": true,
+    "participant": 494,
+    "region": "Hrodna",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      10000,
+      8000,
+      10000,
+      10000,
+      5400,
+      8189
+    ],
+    "total": 71589
+  },
+  {
+    "rank": 4,
+    "award": "gold",
+    "qualified": true,
+    "participant": 892,
+    "region": "Homieĺ",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      10000,
+      8000,
+      10000,
+      10000,
+      5400,
+      8151
+    ],
+    "total": 71551
+  },
+  {
+    "rank": 5,
+    "award": "silver",
+    "qualified": true,
+    "participant": 708,
+    "region": "Licej-BDU",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      8700,
+      6400,
+      10000,
+      10000,
+      2900,
+      7813
+    ],
+    "total": 65813
+  },
+  {
+    "rank": 6,
+    "award": "silver",
+    "qualified": true,
+    "participant": 395,
+    "region": "Viciebsk",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      10000,
+      3500,
+      10000,
+      10000,
+      5400,
+      6212
+    ],
+    "total": 65112
+  },
+  {
+    "rank": 7,
+    "award": "silver",
+    "qualified": true,
+    "participant": 927,
+    "region": "Mahilioŭ",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      4700,
+      6400,
+      10000,
+      10000,
+      5400,
+      8330
+    ],
+    "total": 64830
+  },
+  {
+    "rank": 8,
+    "award": "silver",
+    "qualified": true,
+    "participant": 5,
+    "region": "Brest",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      8700,
+      3500,
+      10000,
+      10000,
+      4100,
+      7443
+    ],
+    "total": 63743
+  },
+  {
+    "rank": 9,
+    "award": "silver",
+    "qualified": true,
+    "participant": 361,
+    "region": "Viciebsk",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      8700,
+      4900,
+      10000,
+      10000,
+      4100,
+      6000
+    ],
+    "total": 63700
+  },
+  {
+    "rank": 10,
+    "award": "silver",
+    "qualified": true,
+    "participant": 895,
+    "region": "Homieĺ",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      3200,
+      4900,
+      10000,
+      10000,
+      5400,
+      7423
+    ],
+    "total": 60923
+  },
+  {
+    "rank": 11,
+    "award": "silver",
+    "qualified": true,
+    "participant": 899,
+    "region": "Homieĺ",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      8700,
+      4900,
+      10000,
+      8000,
+      5400,
+      3595
+    ],
+    "total": 60595
+  },
+  {
+    "rank": 12,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 390,
+    "region": "Viciebsk",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      3200,
+      3500,
+      10000,
+      10000,
+      5400,
+      8339
+    ],
+    "total": 60439
+  },
+  {
+    "rank": 13,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 745,
+    "region": "Licej-BDU",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      9400,
+      0,
+      6400,
+      10000,
+      10000,
+      5400,
+      8165
+    ],
+    "total": 59365
+  },
+  {
+    "rank": 14,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 492,
+    "region": "Hrodna",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      3200,
+      6400,
+      10000,
+      8000,
+      4100,
+      7126
+    ],
+    "total": 58826
+  },
+  {
+    "rank": 15,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 834,
+    "region": "Homieĺ",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      3200,
+      6400,
+      10000,
+      10000,
+      2000,
+      7213
+    ],
+    "total": 58813
+  },
+  {
+    "rank": 16,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 493,
+    "region": "Hrodna",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      5800,
+      4700,
+      3500,
+      10000,
+      10000,
+      4100,
+      8189
+    ],
+    "total": 56289
+  },
+  {
+    "rank": 17,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 932,
+    "region": "Licej-BDU",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      4700,
+      6400,
+      10000,
+      6400,
+      2000,
+      6332
+    ],
+    "total": 55832
+  },
+  {
+    "rank": 18,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 833,
+    "region": "Homieĺ",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      0,
+      3500,
+      10000,
+      10000,
+      4100,
+      6528
+    ],
+    "total": 54128
+  },
+  {
+    "rank": 19,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 148,
+    "region": "Minsk-Horad",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      9400,
+      1500,
+      4900,
+      10000,
+      10000,
+      2000,
+      5397
+    ],
+    "total": 53197
+  },
+  {
+    "rank": 20,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 495,
+    "region": "Hrodna",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      3200,
+      3500,
+      10000,
+      8000,
+      2000,
+      6411
+    ],
+    "total": 53111
+  },
+  {
+    "rank": 21,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 15,
+    "region": "Brest",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      0,
+      4900,
+      10000,
+      10000,
+      4100,
+      3942
+    ],
+    "total": 52942
+  },
+  {
+    "rank": 22,
+    "award": "bronze",
+    "qualified": true,
+    "participant": 744,
+    "region": "Licej-BDU",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      3000,
+      3500,
+      10000,
+      4800,
+      4100,
+      5923
+    ],
+    "total": 51323
+  },
+  {
+    "rank": 23,
+    "award": "",
+    "qualified": false,
+    "participant": 11,
+    "region": "Brest",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      0,
+      4900,
+      10000,
+      10000,
+      0,
+      6223
+    ],
+    "total": 51123
+  },
+  {
+    "rank": 24,
+    "award": "",
+    "qualified": false,
+    "participant": 1090,
+    "region": "Licej-BDU",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      0,
+      3500,
+      10000,
+      10000,
+      2000,
+      5503
+    ],
+    "total": 51003
+  },
+  {
+    "rank": 25,
+    "award": "",
+    "qualified": false,
+    "participant": 345,
+    "region": "Viciebsk",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      3200,
+      3500,
+      10000,
+      6400,
+      2000,
+      5663
+    ],
+    "total": 50763
+  },
+  {
+    "rank": 26,
+    "award": "",
+    "qualified": false,
+    "participant": 17,
+    "region": "Brest",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      0,
+      3500,
+      10000,
+      10000,
+      800,
+      5660
+    ],
+    "total": 49960
+  },
+  {
+    "rank": 27,
+    "award": "",
+    "qualified": false,
+    "participant": 366,
+    "region": "Viciebsk",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      3200,
+      6400,
+      10000,
+      6400,
+      0,
+      3708
+    ],
+    "total": 49708
+  },
+  {
+    "rank": 28,
+    "award": "",
+    "qualified": false,
+    "participant": 1091,
+    "region": "Mahilioŭ",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      3200,
+      6400,
+      10000,
+      3200,
+      2000,
+      3168
+    ],
+    "total": 47968
+  },
+  {
+    "rank": 29,
+    "award": "",
+    "qualified": false,
+    "participant": 749,
+    "region": "Licej-BDU",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      1500,
+      3500,
+      10000,
+      3200,
+      2000,
+      7008
+    ],
+    "total": 47208
+  },
+  {
+    "rank": 30,
+    "award": "",
+    "qualified": false,
+    "participant": 500,
+    "region": "Hrodna",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      3200,
+      3500,
+      10000,
+      4800,
+      0,
+      5390
+    ],
+    "total": 46890
+  },
+  {
+    "rank": 31,
+    "award": "",
+    "qualified": false,
+    "participant": 153,
+    "region": "Minsk-Horad",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      0,
+      700,
+      10000,
+      8000,
+      0,
+      5448
+    ],
+    "total": 44148
+  },
+  {
+    "rank": 32,
+    "award": "",
+    "qualified": false,
+    "participant": 26,
+    "region": "Brest",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      5600,
+      0,
+      6400,
+      10000,
+      3200,
+      2000,
+      6448
+    ],
+    "total": 43648
+  },
+  {
+    "rank": 33,
+    "award": "",
+    "qualified": false,
+    "participant": 251,
+    "region": "Licej-BDU",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      4700,
+      3500,
+      10000,
+      1600,
+      0,
+      1167
+    ],
+    "total": 40967
+  },
+  {
+    "rank": 34,
+    "award": "",
+    "qualified": false,
+    "participant": 9,
+    "region": "Brest",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      4100,
+      0,
+      3500,
+      10000,
+      3200,
+      0,
+      8116
+    ],
+    "total": 38916
+  },
+  {
+    "rank": 35,
+    "award": "",
+    "qualified": false,
+    "participant": 1092,
+    "region": "Mahilioŭ",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      0,
+      700,
+      10000,
+      1600,
+      2000,
+      4000
+    ],
+    "total": 38300
+  },
+  {
+    "rank": 36,
+    "award": "",
+    "qualified": false,
+    "participant": 506,
+    "region": "Hrodna",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      4100,
+      1500,
+      700,
+      10000,
+      4800,
+      2000,
+      4245
+    ],
+    "total": 37345
+  },
+  {
+    "rank": 37,
+    "award": "",
+    "qualified": false,
+    "participant": 358,
+    "region": "Viciebsk",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      0,
+      700,
+      10000,
+      1600,
+      2000,
+      2039
+    ],
+    "total": 36339
+  },
+  {
+    "rank": 38,
+    "award": "",
+    "qualified": false,
+    "participant": 376,
+    "region": "Viciebsk",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      0,
+      700,
+      10000,
+      1600,
+      2000,
+      470
+    ],
+    "total": 34770
+  },
+  {
+    "rank": 39,
+    "award": "",
+    "qualified": false,
+    "participant": 1093,
+    "region": "Minsk-Voblaść",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      0,
+      700,
+      10000,
+      3200,
+      800,
+      0
+    ],
+    "total": 34700
+  },
+  {
+    "rank": 40,
+    "award": "",
+    "qualified": false,
+    "participant": 1094,
+    "region": "Minsk-Voblaść",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      4100,
+      0,
+      6400,
+      10000,
+      3200,
+      0,
+      0
+    ],
+    "total": 33700
+  },
+  {
+    "rank": 41,
+    "award": "",
+    "qualified": false,
+    "participant": 14,
+    "region": "Brest",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      700,
+      3500,
+      3600,
+      4800,
+      0,
+      93
+    ],
+    "total": 32693
+  },
+  {
+    "rank": 42,
+    "award": "",
+    "qualified": false,
+    "participant": 937,
+    "region": "Minsk-Voblaść",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      0,
+      700,
+      1400,
+      1600,
+      0,
+      6534
+    ],
+    "total": 30234
+  },
+  {
+    "rank": 43,
+    "award": "",
+    "qualified": false,
+    "participant": 156,
+    "region": "Minsk-Horad",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      10000,
+      0,
+      700,
+      0,
+      3200,
+      0,
+      1469
+    ],
+    "total": 25369
+  },
+  {
+    "rank": 44,
+    "award": "",
+    "qualified": false,
+    "participant": 1095,
+    "region": "Minsk-Voblaść",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      0,
+      0,
+      700,
+      10000,
+      1600,
+      0,
+      2513
+    ],
+    "total": 24813
+  },
+  {
+    "rank": 45,
+    "award": "",
+    "qualified": false,
+    "participant": 981,
+    "region": "Minsk-Voblaść",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      0,
+      0,
+      0,
+      10000,
+      1600,
+      800,
+      2000
+    ],
+    "total": 24400
+  },
+  {
+    "rank": 46,
+    "award": "",
+    "qualified": false,
+    "participant": 27,
+    "region": "Brest",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      0,
+      0,
+      700,
+      10000,
+      1600,
+      0,
+      2000
+    ],
+    "total": 24300
+  },
+  {
+    "rank": 47,
+    "award": "",
+    "qualified": false,
+    "participant": 1096,
+    "region": "Minsk-Voblaść",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      10000,
+      0,
+      0,
+      700,
+      0,
+      1600,
+      2000,
+      1000
+    ],
+    "total": 15300
+  },
+  {
+    "rank": 48,
+    "award": "",
+    "qualified": false,
+    "participant": 1097,
+    "region": "Mahilioŭ",
+    "grade": 11,
+    "college": false,
+    "tasks": [
+      4800,
+      0,
+      0,
+      700,
+      0,
+      1600,
+      2000,
+      2108
+    ],
+    "total": 11208
+  }
+]
