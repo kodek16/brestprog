@@ -121,7 +121,7 @@
   },
   {
     "rank": 7,
-    "award": "bronze",
+    "award": "silver",
     "qualified": true,
     "participant": 1098,
     "school": -1,
@@ -141,7 +141,7 @@
   },
   {
     "rank": 8,
-    "award": "bronze",
+    "award": "silver",
     "qualified": true,
     "participant": 1099,
     "school": -1,
@@ -161,7 +161,7 @@
   },
   {
     "rank": 9,
-    "award": "bronze",
+    "award": "silver",
     "qualified": true,
     "participant": 1100,
     "school": -1,
@@ -181,7 +181,7 @@
   },
   {
     "rank": 10,
-    "award": "bronze",
+    "award": "silver",
     "qualified": true,
     "participant": 1101,
     "school": -1,
@@ -201,7 +201,7 @@
   },
   {
     "rank": 11,
-    "award": "",
+    "award": "bronze",
     "qualified": true,
     "participant": 1102,
     "school": -1,
@@ -221,7 +221,7 @@
   },
   {
     "rank": 12,
-    "award": "",
+    "award": "bronze",
     "qualified": true,
     "participant": 1103,
     "school": -1,
@@ -241,7 +241,7 @@
   },
   {
     "rank": 13,
-    "award": "",
+    "award": "bronze",
     "qualified": true,
     "participant": 711,
     "school": -1,
@@ -261,7 +261,7 @@
   },
   {
     "rank": 14,
-    "award": "",
+    "award": "bronze",
     "qualified": true,
     "participant": 725,
     "school": -1,
@@ -281,7 +281,7 @@
   },
   {
     "rank": 15,
-    "award": "",
+    "award": "bronze",
     "qualified": true,
     "participant": 612,
     "school": -1,
@@ -301,7 +301,7 @@
   },
   {
     "rank": 16,
-    "award": "",
+    "award": "bronze",
     "qualified": false,
     "participant": 669,
     "school": -1,
@@ -321,7 +321,7 @@
   },
   {
     "rank": 17,
-    "award": "",
+    "award": "bronze",
     "qualified": false,
     "participant": 712,
     "school": -1,
@@ -341,7 +341,7 @@
   },
   {
     "rank": 18,
-    "award": "",
+    "award": "bronze",
     "qualified": false,
     "participant": 1104,
     "school": -1,
@@ -361,7 +361,7 @@
   },
   {
     "rank": 19,
-    "award": "",
+    "award": "bronze",
     "qualified": false,
     "participant": 740,
     "school": -1,
@@ -381,7 +381,7 @@
   },
   {
     "rank": 20,
-    "award": "",
+    "award": "bronze",
     "qualified": false,
     "participant": 1105,
     "school": -1,
