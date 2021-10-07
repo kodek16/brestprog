@@ -7,7 +7,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 800,
+    "total": 80000,
     "tasks": [
       10000,
       10000,
@@ -27,7 +27,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 734,
+    "total": 73400,
     "tasks": [
       10000,
       10000,
@@ -47,7 +47,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 694,
+    "total": 69400,
     "tasks": [
       10000,
       10000,
@@ -67,7 +67,7 @@
     "school": -1,
     "grade": 9,
     "college": false,
-    "total": 684,
+    "total": 68400,
     "tasks": [
       10000,
       10000,
@@ -87,7 +87,7 @@
     "school": -1,
     "grade": 10,
     "college": false,
-    "total": 684,
+    "total": 68400,
     "tasks": [
       10000,
       10000,
@@ -107,7 +107,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 666,
+    "total": 66600,
     "tasks": [
       10000,
       10000,
@@ -127,7 +127,7 @@
     "school": -1,
     "grade": 10,
     "college": false,
-    "total": 634,
+    "total": 63400,
     "tasks": [
       10000,
       10000,
@@ -147,7 +147,7 @@
     "school": -1,
     "grade": 10,
     "college": false,
-    "total": 620,
+    "total": 62000,
     "tasks": [
       10000,
       10000,
@@ -167,7 +167,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 619,
+    "total": 61900,
     "tasks": [
       10000,
       10000,
@@ -187,7 +187,7 @@
     "school": -1,
     "grade": 10,
     "college": false,
-    "total": 615,
+    "total": 61500,
     "tasks": [
       10000,
       10000,
@@ -207,7 +207,7 @@
     "school": -1,
     "grade": 8,
     "college": false,
-    "total": 611,
+    "total": 61100,
     "tasks": [
       10000,
       10000,
@@ -227,7 +227,7 @@
     "school": -1,
     "grade": 9,
     "college": false,
-    "total": 606,
+    "total": 60600,
     "tasks": [
       10000,
       10000,
@@ -247,7 +247,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 606,
+    "total": 60600,
     "tasks": [
       10000,
       10000,
@@ -267,7 +267,7 @@
     "school": -1,
     "grade": 10,
     "college": false,
-    "total": 593,
+    "total": 59300,
     "tasks": [
       10000,
       10000,
@@ -287,7 +287,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 590,
+    "total": 59000,
     "tasks": [
       10000,
       10000,
@@ -307,7 +307,7 @@
     "school": -1,
     "grade": 10,
     "college": false,
-    "total": 579,
+    "total": 57900,
     "tasks": [
       10000,
       10000,
@@ -327,7 +327,7 @@
     "school": -1,
     "grade": 9,
     "college": false,
-    "total": 574,
+    "total": 57400,
     "tasks": [
       10000,
       10000,
@@ -347,7 +347,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 567,
+    "total": 56700,
     "tasks": [
       10000,
       10000,
@@ -367,7 +367,7 @@
     "school": -1,
     "grade": 10,
     "college": false,
-    "total": 559,
+    "total": 55900,
     "tasks": [
       10000,
       10000,
@@ -387,7 +387,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 543,
+    "total": 54300,
     "tasks": [
       10000,
       10000,
@@ -407,7 +407,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 539,
+    "total": 53900,
     "tasks": [
       10000,
       10000,
@@ -427,7 +427,7 @@
     "school": -1,
     "grade": 10,
     "college": false,
-    "total": 506,
+    "total": 50600,
     "tasks": [
       10000,
       10000,
@@ -447,7 +447,7 @@
     "school": -1,
     "grade": 9,
     "college": false,
-    "total": 506,
+    "total": 50600,
     "tasks": [
       10000,
       4700,
@@ -467,7 +467,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 497,
+    "total": 49700,
     "tasks": [
       10000,
       10000,
@@ -487,7 +487,7 @@
     "school": -1,
     "grade": 8,
     "college": false,
-    "total": 484,
+    "total": 48400,
     "tasks": [
       10000,
       4400,
@@ -507,7 +507,7 @@
     "school": -1,
     "grade": 6,
     "college": false,
-    "total": 481,
+    "total": 48100,
     "tasks": [
       10000,
       10000,
@@ -527,7 +527,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 479,
+    "total": 47900,
     "tasks": [
       10000,
       4700,
@@ -547,7 +547,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 469,
+    "total": 46900,
     "tasks": [
       10000,
       10000,
@@ -567,7 +567,7 @@
     "school": -1,
     "grade": 10,
     "college": false,
-    "total": 453,
+    "total": 45300,
     "tasks": [
       10000,
       10000,
@@ -587,7 +587,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 450,
+    "total": 45000,
     "tasks": [
       10000,
       10000,
@@ -607,7 +607,7 @@
     "school": -1,
     "grade": 7,
     "college": false,
-    "total": 424,
+    "total": 42400,
     "tasks": [
       10000,
       10000,
@@ -627,7 +627,7 @@
     "school": -1,
     "grade": 9,
     "college": false,
-    "total": 418,
+    "total": 41800,
     "tasks": [
       10000,
       10000,
@@ -647,7 +647,7 @@
     "school": -1,
     "grade": 8,
     "college": false,
-    "total": 408,
+    "total": 40800,
     "tasks": [
       10000,
       4400,
@@ -667,7 +667,7 @@
     "school": -1,
     "grade": 9,
     "college": false,
-    "total": 386,
+    "total": 38600,
     "tasks": [
       10000,
       4700,
@@ -687,7 +687,7 @@
     "school": -1,
     "grade": 9,
     "college": false,
-    "total": 384,
+    "total": 38400,
     "tasks": [
       10000,
       4400,
@@ -707,7 +707,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 351,
+    "total": 35100,
     "tasks": [
       10000,
       1200,
@@ -727,7 +727,7 @@
     "school": -1,
     "grade": 9,
     "college": false,
-    "total": 339,
+    "total": 33900,
     "tasks": [
       10000,
       1500,
@@ -747,7 +747,7 @@
     "school": -1,
     "grade": 9,
     "college": false,
-    "total": 336,
+    "total": 33600,
     "tasks": [
       10000,
       1200,
@@ -767,7 +767,7 @@
     "school": -1,
     "grade": 10,
     "college": false,
-    "total": 333,
+    "total": 33300,
     "tasks": [
       4200,
       1200,
@@ -787,7 +787,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 331,
+    "total": 33100,
     "tasks": [
       10000,
       1200,
@@ -807,7 +807,7 @@
     "school": -1,
     "grade": 10,
     "college": false,
-    "total": 328,
+    "total": 32800,
     "tasks": [
       0,
       10000,
@@ -827,7 +827,7 @@
     "school": -1,
     "grade": 6,
     "college": false,
-    "total": 315,
+    "total": 31500,
     "tasks": [
       10000,
       1200,
@@ -847,7 +847,7 @@
     "school": -1,
     "grade": 8,
     "college": false,
-    "total": 307,
+    "total": 30700,
     "tasks": [
       4200,
       4400,
@@ -867,7 +867,7 @@
     "school": -1,
     "grade": 9,
     "college": false,
-    "total": 294,
+    "total": 29400,
     "tasks": [
       4200,
       1200,
@@ -887,7 +887,7 @@
     "school": -1,
     "grade": 9,
     "college": false,
-    "total": 268,
+    "total": 26800,
     "tasks": [
       0,
       4400,
@@ -907,7 +907,7 @@
     "school": -1,
     "grade": 10,
     "college": false,
-    "total": 267,
+    "total": 26700,
     "tasks": [
       10000,
       1500,
@@ -927,7 +927,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 250,
+    "total": 25000,
     "tasks": [
       1600,
       1200,
@@ -947,7 +947,7 @@
     "school": -1,
     "grade": 8,
     "college": false,
-    "total": 240,
+    "total": 24000,
     "tasks": [
       0,
       1500,
@@ -967,7 +967,7 @@
     "school": -1,
     "grade": 8,
     "college": false,
-    "total": 239,
+    "total": 23900,
     "tasks": [
       300,
       0,
@@ -987,7 +987,7 @@
     "school": -1,
     "grade": 10,
     "college": false,
-    "total": 236,
+    "total": 23600,
     "tasks": [
       0,
       1200,
@@ -1007,7 +1007,7 @@
     "school": -1,
     "grade": 9,
     "college": false,
-    "total": 221,
+    "total": 22100,
     "tasks": [
       0,
       0,
@@ -1027,7 +1027,7 @@
     "school": -1,
     "grade": 10,
     "college": false,
-    "total": 203,
+    "total": 20300,
     "tasks": [
       0,
       0,
@@ -1047,7 +1047,7 @@
     "school": -1,
     "grade": 9,
     "college": false,
-    "total": 128,
+    "total": 12800,
     "tasks": [
       1600,
       1200,
@@ -1067,7 +1067,7 @@
     "school": -1,
     "grade": 6,
     "college": false,
-    "total": 103,
+    "total": 10300,
     "tasks": [
       0,
       0,
@@ -1087,7 +1087,7 @@
     "school": -1,
     "grade": 6,
     "college": false,
-    "total": 96,
+    "total": 9600,
     "tasks": [
       0,
       4400,
@@ -1107,7 +1107,7 @@
     "school": -1,
     "grade": 10,
     "college": false,
-    "total": 63,
+    "total": 6300,
     "tasks": [
       0,
       0,
@@ -1127,7 +1127,7 @@
     "school": -1,
     "grade": 11,
     "college": false,
-    "total": 57,
+    "total": 5700,
     "tasks": [
       0,
       500,
