@@ -39,6 +39,10 @@ module Brestprog
     def [](id)
       all[id]
     end
+
+    def key?(id)
+      all.key?(id)
+    end
   end
 
   class ParticipantsData
@@ -93,11 +97,13 @@ module Brestprog
           reg_result = participant.dig('results', 'regionals', year)
 
           if reg_result
-            school = self[reg_result['school']]
-            school['results'] ||= {}
-            school['results'][year] ||= {}
-            school['results'][year][entry['participant']] ||= {}
-            school['results'][year][entry['participant']]['national'] = entry
+            if self.key?(reg_result['school'])
+              school = self[reg_result['school']]
+              school['results'] ||= {}
+              school['results'][year] ||= {}
+              school['results'][year][entry['participant']] ||= {}
+              school['results'][year][entry['participant']]['national'] = entry
+            end
           end
         end
       end
@@ -105,11 +111,13 @@ module Brestprog
       site.data['contests']['regionals'].each do |year, all_results|
         all_results.each do |region, results|
           results['results'].each do |entry|
-            school = self[entry['school']]
-            school['results'] ||= {}
-            school['results'][year] ||= {}
-            school['results'][year][entry['participant']] ||= {}
-            school['results'][year][entry['participant']]['regional'] = entry
+            if self.key?(entry['school'])
+              school = self[entry['school']]
+              school['results'] ||= {}
+              school['results'][year] ||= {}
+              school['results'][year][entry['participant']] ||= {}
+              school['results'][year][entry['participant']]['regional'] = entry
+            end
           end
         end
       end
