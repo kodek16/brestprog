@@ -97,11 +97,13 @@ module Brestprog
           reg_result = participant.dig('results', 'regionals', year)
 
           if reg_result
-            school = self[reg_result['school']]
-            school['results'] ||= {}
-            school['results'][year] ||= {}
-            school['results'][year][entry['participant']] ||= {}
-            school['results'][year][entry['participant']]['national'] = entry
+            if self.key?(reg_result['school'])
+              school = self[reg_result['school']]
+              school['results'] ||= {}
+              school['results'][year] ||= {}
+              school['results'][year][entry['participant']] ||= {}
+              school['results'][year][entry['participant']]['national'] = entry
+            end
           end
         end
       end
