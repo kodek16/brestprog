@@ -34,7 +34,7 @@ permalink: results/
 
   <div class='mdl-tabs__panel is-active' id='brest'>
     <ul>
-      <li><a href='{{ "results/brest/2021" | relative_url }}'>2021, ???</a></li>
+      <li><a href='{{ "results/brest/2021" | relative_url }}'>2021, Пинск</a></li>
       <li><a href='{{ "results/brest/2020" | relative_url }}'>2020, Пинск</a></li>
       <li><a href='{{ "results/brest/2019" | relative_url }}'>2019, Пинск</a></li>
       <li><a href='{{ "results/brest/2018" | relative_url }}'>2018, Брест</a></li>
@@ -46,7 +46,7 @@ permalink: results/
 
   <div class='mdl-tabs__panel' id='viciebsk'>
     <ul>
-      <li><a href='{{ "results/viciebsk/2021" | relative_url }}'>2021, ???</a></li>
+      <li><a href='{{ "results/viciebsk/2021" | relative_url }}'>2021, Витебск</a></li>
       <li><a href='{{ "results/viciebsk/2020" | relative_url }}'>2020, Витебск</a></li>
       <li><a href='{{ "results/viciebsk/2019" | relative_url }}'>2019, Витебск</a></li>
       <li><a href='{{ "results/viciebsk/2018" | relative_url }}'>2018, Витебск</a></li>
@@ -58,7 +58,7 @@ permalink: results/
 
   <div class='mdl-tabs__panel' id='homiel'>
     <ul>
-      <li><a href='{{ "results/homiel/2021" | relative_url }}'>2021, Гомель</a></li>
+      <li><a href='{{ "results/homiel/2021" | relative_url }}'>2021, Мозырь</a></li>
       <li><a href='{{ "results/homiel/2020" | relative_url }}'>2020, Гомель</a></li>
       <li><a href='{{ "results/homiel/2019" | relative_url }}'>2019, Гомель</a></li>
     </ul>
@@ -75,14 +75,14 @@ permalink: results/
 
   <div class='mdl-tabs__panel' id='minsk-voblasc'>
     <ul>
-      <li><a href='{{ "results/minsk-voblasc/2021" | relative_url }}'>2021, ???</a></li>
-      <li><a href='{{ "results/minsk-voblasc/2017" | relative_url }}'>2017</a></li>
+      <li><a href='{{ "results/minsk-voblasc/2021" | relative_url }}'>2021, Минск</a></li>
+      <li><a href='{{ "results/minsk-voblasc/2017" | relative_url }}'>2017, Минск</a></li>
     </ul>
   </div>
   
   <div class='mdl-tabs__panel' id='mahiliou'>
     <ul>
-      <li><a href='{{ "results/mahiliou/2021" | relative_url }}'>2021, ???</a></li>
+      <li><a href='{{ "results/mahiliou/2021" | relative_url }}'>2021, Могилёв</a></li>
     </ul>
   </div>
 
